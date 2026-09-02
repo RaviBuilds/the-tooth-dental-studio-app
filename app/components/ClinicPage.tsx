@@ -1,7 +1,7 @@
 "use client";
 
-import { useEffect } from "react";
 import Image from "next/image";
+import { Hero } from "./sections/Hero";
 
 const img = (name:string) => `/images/${name}`;
 const clinic = "clinic images/";
@@ -11,30 +11,36 @@ function Eyebrow({children}:{children:React.ReactNode}) { return <p className="e
 function ArrowLink({children, href="#contact"}:{children:React.ReactNode; href?:string}) { return <a className="focus-ring inline-flex items-center gap-4 border-b border-gold pb-2 text-sm font-semibold tracking-wide transition-transform duration-300 hover:translate-x-1" href={href}>{children}<span aria-hidden>↗</span></a> }
 function Section({id, children, dark=false, className=""}:{id:string;children:React.ReactNode;dark?:boolean;className?:string}) { return <section id={id} className={`${dark?"bg-charcoal text-background":"bg-background"} ${className}`}>{children}</section> }
 
-export function Navigation(){ return <header className="absolute z-20 flex w-full items-center justify-between px-6 py-6 text-background md:px-10"><a href="#top" className="focus-ring eyebrow text-background">THE TOOTH<br/>DENTAL STUDIO</a><nav className="hidden gap-8 text-xs font-semibold uppercase tracking-widest md:flex"><a className="focus-ring" href="#approach">Approach</a><a className="focus-ring" href="#doctor">Doctor</a><a className="focus-ring" href="#studio">Studio</a><a className="focus-ring" href="#contact">Contact</a></nav><a className="focus-ring border border-background/60 px-4 py-3 text-xs font-semibold uppercase tracking-widest transition-colors hover:border-gold hover:bg-gold hover:text-charcoal" href="#contact">Book a visit</a></header> }
+function PhoneIcon() { return <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" /></svg>; }
 
-export function Hero(){
-  useEffect(() => {
-    const stage = document.querySelector<HTMLElement>(".hero-stage");
-    if (!stage || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-    const onPointerMove = (event: PointerEvent) => {
-      const x = (event.clientX / window.innerWidth - 0.5) * 2;
-      const y = (event.clientY / window.innerHeight - 0.5) * 2;
-      stage.style.setProperty("--hero-x", `${x}`);
-      stage.style.setProperty("--hero-y", `${y}`);
-    };
-    const onScroll = () => {
-      stage.style.setProperty("--hero-scroll", `${Math.min(window.scrollY / Math.max(stage.offsetHeight, 1), 1)}`);
-    };
-    window.addEventListener("pointermove", onPointerMove, { passive: true });
-    window.addEventListener("scroll", onScroll, { passive: true });
-    onScroll();
-    return () => {
-      window.removeEventListener("pointermove", onPointerMove);
-      window.removeEventListener("scroll", onScroll);
-    };
-  }, []);
-  return <Section id="top" dark className="hero-stage relative min-h-[78vh] overflow-hidden md:min-h-[82vh]"><div className="hero-architecture hero-atmosphere pointer-events-none absolute inset-0" aria-hidden="true"><div className="hero-arc hero-arc-one"/><div className="hero-arc hero-arc-two"/><div className="hero-light"/></div><div className="hero-floor pointer-events-none absolute bottom-0 left-0 right-0 h-[24%] md:h-[29%]" aria-hidden="true"/><div className="pointer-events-none absolute bottom-0 left-0 z-[1] h-[28%] w-[72%] md:inset-y-0 md:h-auto md:w-[47%]"><Image src={img(doctor+"dr-mohammed-imran-ali-tooth-dental-studio-hyderabad-01.png")} alt="Dr. Mohammed Imran Ali at The Tooth Dental Studio" fill priority sizes="(max-width: 768px) 88vw, 48vw" className="hero-doctor object-contain object-bottom object-left" /><div className="hero-doctor-label absolute bottom-5 left-6 md:bottom-10 md:left-10"><p className="eyebrow text-background">DR. MOHAMMED IMRAN ALI</p><p className="mt-2 text-xs uppercase tracking-[0.22em] text-background/55">GENERAL DENTIST</p></div></div><div className="pointer-events-none absolute inset-0 z-[2] bg-gradient-to-r from-charcoal/5 via-charcoal/15 to-charcoal/85"/><div className="relative z-[3] mx-auto flex min-h-[78vh] md:min-h-[82vh] max-w-7xl flex-col justify-end px-6 pb-12 pt-28 md:grid md:min-h-[78vh] md:min-h-[82vh] md:grid-cols-[.72fr_1.28fr] md:items-center md:gap-8 md:px-10 md:pb-16 md:pt-24"><div className="hero-copy relative self-end md:col-start-2 md:row-start-1"><Eyebrow>THE TOOTH DENTAL STUDIO · TOLICHOWKI · HYDERABAD</Eyebrow><h1 className="display mt-5 max-w-3xl text-6xl text-background md:mt-7 md:text-[8.4rem]">DENTISTRY<br/><span className="text-gold">WITHOUT</span><br/>THE FEAR.</h1><p className="mt-6 max-w-md text-base leading-7 text-background/80">Calm care. Clear explanations. A better dental experience.</p><div className="mt-7 flex flex-wrap items-center gap-x-7 gap-y-4"><ArrowLink>Book an Appointment</ArrowLink><a className="focus-ring py-2 text-sm font-semibold text-background/75 transition-colors hover:text-gold" href="#contact">Call the Clinic</a></div></div><div className="hero-review absolute bottom-7 right-6 z-10 w-56 border border-gold/40 bg-charcoal/90 p-4 text-background shadow-2xl backdrop-blur-sm md:bottom-10 md:right-10"><div><p className="text-2xl font-semibold tracking-tight text-background">5.0 <span className="text-gold">★★★★★</span></p><p className="eyebrow mt-2 text-background/55">1,147 Google Reviews</p></div><div className="hidden h-12 w-px bg-background/20 md:block"/><div className="text-right md:text-left"><p className="eyebrow text-background/60">Dr. Mohammed Imran Ali</p><p className="mt-2 text-xs text-background/45">General Dentist · Surya Nagar Colony</p></div></div></div></Section> }
+export function Navigation() {
+  return (
+    <header className="site-nav">
+      <a href="#top" className="nav-brand focus-ring" aria-label="The Tooth Dental Studio, Tolichowki, Hyderabad - home">
+        <Image src="/images/tooth-dental-studio-logo.png" alt="" width={92} height={92} sizes="92px" preload className="nav-logo" />
+      </a>
+      <nav className="nav-links" aria-label="Primary">
+        <a className="focus-ring" href="#approach">Approach</a>
+        <a className="focus-ring" href="#doctor">Doctor</a>
+        <a className="focus-ring" href="#studio">Studio</a>
+        <a className="focus-ring" href="#contact">Contact</a>
+      </nav>
+      <div className="nav-actions">
+        <a className="nav-phone focus-ring" href="tel:+919966340056">
+          <PhoneIcon />
+          <span>{"099663 40056"}</span>
+        </a>
+        <a className="nav-cta focus-ring" href="#contact">
+          {"Book a Visit"} <span aria-hidden>{"\u2197"}</span>
+        </a>
+        <a className="nav-call focus-ring" href="tel:+919966340056" aria-label="Call the clinic - 099663 40056">
+          <PhoneIcon />
+        </a>
+      </div>
+    </header>
+  );
+}
+
 
 export function Philosophy(){return <Section id="approach" className="px-6 py-24 md:px-10 md:py-36"><div className="mx-auto max-w-7xl"><div className="grid gap-16 md:grid-cols-[.7fr_1.3fr]"><div><Eyebrow>THE PATIENT EXPERIENCE</Eyebrow><p className="mt-24 hidden text-sm text-muted md:block">01 — OUR PHILOSOPHY</p></div><div><h2 className="display max-w-4xl text-6xl md:text-8xl">The treatment is only part of the experience.</h2><p className="mt-10 max-w-2xl text-lg leading-8 text-muted">At The Tooth Dental Studio, patient experience is central. Dr. Mohammed Imran Ali is repeatedly described as calm, gentle, approachable and thorough — particularly in the way he explains treatment and helps nervous patients feel reassured.</p><div className="mt-16 grid grid-cols-2 gap-x-8 gap-y-10 border-t border-foreground/15 pt-8 md:grid-cols-4">{[["LISTEN","Understand the concern."],["EXPLAIN","Make the options clear."],["TREAT","Deliver careful, focused care."],["FOLLOW UP","Stay connected after treatment."]].map(([a,b])=><div key={a}><p className="eyebrow text-foreground">{a}</p><p className="mt-3 text-sm leading-6 text-muted">{b}</p></div>)}</div></div></div></div></Section>}
 export function Authority(){return <Section id="trust" dark className="px-6 py-24 md:px-10 md:py-32"><div className="mx-auto grid max-w-7xl gap-14 md:grid-cols-[1fr_1.4fr] md:items-end"><div><Eyebrow>1,147 PATIENT VOICES</Eyebrow><div className="display mt-12 text-[9rem] leading-[.72] text-gold md:text-[14rem]">5.0</div><p className="mt-8 text-xl">★★★★★ <span className="text-background/50">/ Google Reviews</span></p></div><div><h2 className="display max-w-2xl text-6xl md:text-8xl">A reputation built one experience at a time.</h2><p className="mt-8 max-w-xl text-lg leading-8 text-background/70">A good dental visit is not simply about completing a procedure. It is about understanding the problem, knowing your options, feeling comfortable with the plan and knowing that someone is paying attention throughout the process.</p><p className="mt-12 max-w-xl text-2xl leading-9 text-gold">The rating is the number. The experience is the reason.</p></div></div></Section>}
