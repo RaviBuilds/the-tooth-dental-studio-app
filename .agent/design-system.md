@@ -239,6 +239,16 @@ Do not specify an arbitrary font if the project has not chosen one yet. The typo
 
 The 14 approved content sections should feel like a designed sequence, not a template repeated 14 times. Each section should have distinct visual personality while remaining cohesive.
 
+### Section identity ghost word:
+
+Every major homepage section carries **one unique uppercase word in the background** — a large, very low-contrast serif "ghost word" that names the identity of that section. This is a standing convention across the site, not a one-off decoration.
+
+- **Section 02 (Proof)** — background word: `REPUTATION`
+- **Section 03 (Treatment Atlas)** — background word: `CARE`
+- Each future section must adopt its own single identity word — never reuse a word between sections.
+- Treatment: oversized serif (Cormorant), extremely low contrast (5–8% opacity against its ground), anchored to the section head, `aria-hidden`, never interactive, never a competing read — it should be felt more than seen.
+- The word replaces the section number as the background mark; the section number lives in the eyebrow / index typography instead.
+
 ---
 
 ## Image Treatment
