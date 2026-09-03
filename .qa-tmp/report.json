@@ -1,0 +1,2165 @@
+[
+  {
+    "vw": 1920,
+    "vh": 1080,
+    "lcp": 936,
+    "consoleErrors": [],
+    "proofReady": true,
+    "pending": [
+      {
+        "cls": "proof-stage-eyebrow proof-reveal",
+        "opacity": "0",
+        "transform": "matrix(1, 0, 0, 1, 0, 26)"
+      },
+      {
+        "cls": "proof-stage-quotebox proof-reveal",
+        "opacity": "0",
+        "transform": "matrix(1, 0, 0, 1, 0, 26)"
+      },
+      {
+        "cls": "proof-rail proof-reveal",
+        "opacity": "0",
+        "transform": "matrix(1, 0, 0, 1, 0, 26)"
+      },
+      {
+        "cls": "proof-reputation-ghost proof-reveal",
+        "opacity": "0.55",
+        "transform": "matrix(1, 0, 0, 1, 0, -3.12)"
+      },
+      {
+        "cls": "proof-gcard-bridge proof-reveal",
+        "opacity": "0",
+        "transform": "matrix(1, 0, 0, 1, 0, 26)"
+      },
+      {
+        "cls": "proof-gcard-note proof-reveal",
+        "opacity": "0",
+        "transform": "matrix(1, 0, 0, 1, 0, 26)"
+      },
+      {
+        "cls": "proof-signals-eyebrow proof-reveal",
+        "opacity": "0",
+        "transform": "matrix(1, 0, 0, 1, 0, 26)"
+      },
+      {
+        "cls": "proof-signature proof-reveal",
+        "opacity": "0",
+        "transform": "matrix(1, 0, 0, 1, 0, 26)"
+      }
+    ],
+    "lines": [
+      {
+        "text": "A reputation built",
+        "opacity": "1",
+        "transform": "matrix(1, 0, 0, 1, 0, 0)",
+        "visiblePx": 135.359375,
+        "h": 135
+      },
+      {
+        "text": "one experience",
+        "opacity": "1",
+        "transform": "matrix(1, 0, 0, 1, 0, 0)",
+        "visiblePx": 135.359375,
+        "h": 135
+      },
+      {
+        "text": "at a time.",
+        "opacity": "1",
+        "transform": "matrix(1, 0, 0, 1, 0, 0)",
+        "visiblePx": 135.359375,
+        "h": 135
+      }
+    ],
+    "activeQuote": {
+      "opacity": "1",
+      "visibility": "visible"
+    },
+    "railItems": [
+      {
+        "name": "01Spoorthi K.",
+        "opacity": "1",
+        "visible": true
+      },
+      {
+        "name": "02Hamza Mohammed",
+        "opacity": "1",
+        "visible": true
+      },
+      {
+        "name": "03Asma Fatima",
+        "opacity": "1",
+        "visible": true
+      },
+      {
+        "name": "04Sridevi Reddy Ae",
+        "opacity": "1",
+        "visible": true
+      },
+      {
+        "name": "05Syed Afzaal Ahme",
+        "opacity": "1",
+        "visible": true
+      }
+    ],
+    "video": {
+      "hasSrc": false,
+      "poster": true,
+      "readyState": 0,
+      "videoWidth": 0,
+      "videoHeight": 0,
+      "paused": true,
+      "currentTime": 0,
+      "error": null,
+      "opacity": "1"
+    },
+    "geo": {
+      "open": {
+        "top": 0,
+        "left": 0,
+        "w": 1920,
+        "h": 957,
+        "bottom": 957
+      },
+      "title": {
+        "top": 231,
+        "left": 164,
+        "w": 945,
+        "h": 426,
+        "bottom": 657
+      },
+      "media": {
+        "top": 795,
+        "left": 944,
+        "w": 812,
+        "h": 1029,
+        "bottom": 1824
+      },
+      "frame": {
+        "top": 795,
+        "left": 944,
+        "w": 547,
+        "h": 972,
+        "bottom": 1767
+      },
+      "stage": {
+        "top": 1011,
+        "left": 164,
+        "w": 676,
+        "h": 529,
+        "bottom": 1541
+      },
+      "rating": {
+        "top": 321,
+        "left": 1340,
+        "w": 416,
+        "h": 318,
+        "bottom": 639
+      },
+      "signals": {
+        "top": 2193,
+        "left": 164,
+        "w": 1592,
+        "h": 512,
+        "bottom": 2706
+      }
+    },
+    "reputation": {
+      "card": {
+        "top": 321,
+        "left": 1340,
+        "w": 416,
+        "h": 318,
+        "bottom": 639
+      },
+      "ghost": {
+        "top": 1781,
+        "left": -211,
+        "w": 2186,
+        "h": 368,
+        "bottom": 2149
+      },
+      "ghostOpacity": 0.55,
+      "ghostFont": "368px",
+      "ghostBehind": 0,
+      "voice": "Spoorthi K.",
+      "score": "5.0",
+      "count": "1,147 Google Reviews",
+      "bridge": "The rating is the number. The experience"
+    },
+    "overflowX": 0,
+    "overflowCulprits": [],
+    "boundary": {
+      "heroBottomDoc": 1080,
+      "proofTopDoc": 1080,
+      "gapPx": 0
+    },
+    "videoAfterSettle": {
+      "hasSrc": true,
+      "readyState": 4,
+      "videoWidth": 1080,
+      "paused": false,
+      "currentTime": 2.13,
+      "error": null,
+      "safeStart": false
+    },
+    "sectionHeight": 2814
+  },
+  {
+    "vw": 1440,
+    "vh": 900,
+    "lcp": 504,
+    "consoleErrors": [],
+    "proofReady": true,
+    "pending": [
+      {
+        "cls": "proof-stage-eyebrow proof-reveal",
+        "opacity": "0",
+        "transform": "matrix(1, 0, 0, 1, 0, 26)"
+      },
+      {
+        "cls": "proof-stage-quotebox proof-reveal",
+        "opacity": "0",
+        "transform": "matrix(1, 0, 0, 1, 0, 26)"
+      },
+      {
+        "cls": "proof-rail proof-reveal",
+        "opacity": "0",
+        "transform": "matrix(1, 0, 0, 1, 0, 26)"
+      },
+      {
+        "cls": "proof-reputation-ghost proof-reveal",
+        "opacity": "0.55",
+        "transform": "matrix(1, 0, 0, 1, 0, -3.21)"
+      },
+      {
+        "cls": "proof-gcard-bridge proof-reveal",
+        "opacity": "0",
+        "transform": "matrix(1, 0, 0, 1, 0, 26)"
+      },
+      {
+        "cls": "proof-gcard-note proof-reveal",
+        "opacity": "0",
+        "transform": "matrix(1, 0, 0, 1, 0, 26)"
+      },
+      {
+        "cls": "proof-signals-eyebrow proof-reveal",
+        "opacity": "0",
+        "transform": "matrix(1, 0, 0, 1, 0, 26)"
+      },
+      {
+        "cls": "proof-signature proof-reveal",
+        "opacity": "0",
+        "transform": "matrix(1, 0, 0, 1, 0, 26)"
+      }
+    ],
+    "lines": [
+      {
+        "text": "A reputation built",
+        "opacity": "1",
+        "transform": "matrix(1, 0, 0, 1, 0, 0)",
+        "visiblePx": 89.34375,
+        "h": 89
+      },
+      {
+        "text": "one experience",
+        "opacity": "1",
+        "transform": "matrix(1, 0, 0, 1, 0, 0)",
+        "visiblePx": 89.34375,
+        "h": 89
+      },
+      {
+        "text": "at a time.",
+        "opacity": "1",
+        "transform": "matrix(1, 0, 0, 1, 0, 0)",
+        "visiblePx": 89.34375,
+        "h": 89
+      }
+    ],
+    "activeQuote": {
+      "opacity": "1",
+      "visibility": "visible"
+    },
+    "railItems": [
+      {
+        "name": "01Spoorthi K.",
+        "opacity": "1",
+        "visible": true
+      },
+      {
+        "name": "02Hamza Mohammed",
+        "opacity": "1",
+        "visible": true
+      },
+      {
+        "name": "03Asma Fatima",
+        "opacity": "1",
+        "visible": true
+      },
+      {
+        "name": "04Sridevi Reddy Ae",
+        "opacity": "1",
+        "visible": true
+      },
+      {
+        "name": "05Syed Afzaal Ahme",
+        "opacity": "1",
+        "visible": true
+      }
+    ],
+    "video": {
+      "hasSrc": true,
+      "poster": true,
+      "readyState": 4,
+      "videoWidth": 1080,
+      "videoHeight": 1920,
+      "paused": false,
+      "currentTime": 13.85,
+      "error": null,
+      "opacity": "1"
+    },
+    "geo": {
+      "open": {
+        "top": 0,
+        "left": 0,
+        "w": 1440,
+        "h": 754,
+        "bottom": 754
+      },
+      "title": {
+        "top": 198,
+        "left": 58,
+        "w": 778,
+        "h": 281,
+        "bottom": 480
+      },
+      "media": {
+        "top": 619,
+        "left": 707,
+        "w": 676,
+        "h": 867,
+        "bottom": 1486
+      },
+      "frame": {
+        "top": 619,
+        "left": 707,
+        "w": 456,
+        "h": 810,
+        "bottom": 1429
+      },
+      "stage": {
+        "top": 799,
+        "left": 58,
+        "w": 563,
+        "h": 536,
+        "bottom": 1335
+      },
+      "rating": {
+        "top": 239,
+        "left": 966,
+        "w": 416,
+        "h": 276,
+        "bottom": 515
+      },
+      "signals": {
+        "top": 1829,
+        "left": 58,
+        "w": 1325,
+        "h": 504,
+        "bottom": 2334
+      }
+    },
+    "reputation": {
+      "card": {
+        "top": 239,
+        "left": 966,
+        "w": 416,
+        "h": 276,
+        "bottom": 515
+      },
+      "ghost": {
+        "top": 1442,
+        "left": -56,
+        "w": 1625,
+        "h": 274,
+        "bottom": 1716
+      },
+      "ghostOpacity": 0.55,
+      "ghostFont": "273.6px",
+      "ghostBehind": 0,
+      "voice": "Sridevi Reddy Aellala",
+      "score": "5.0",
+      "count": "1,147 Google Reviews",
+      "bridge": "The rating is the number. The experience"
+    },
+    "overflowX": 0,
+    "overflowCulprits": [],
+    "boundary": {
+      "heroBottomDoc": 900,
+      "proofTopDoc": 900,
+      "gapPx": 0
+    },
+    "videoAfterSettle": {
+      "hasSrc": true,
+      "readyState": 4,
+      "videoWidth": 1080,
+      "paused": false,
+      "currentTime": 16.38,
+      "error": null,
+      "safeStart": true
+    },
+    "sectionHeight": 2424
+  },
+  {
+    "vw": 1280,
+    "vh": 800,
+    "lcp": 484,
+    "consoleErrors": [],
+    "proofReady": true,
+    "pending": [
+      {
+        "cls": "proof-stage-eyebrow proof-reveal",
+        "opacity": "0",
+        "transform": "matrix(1, 0, 0, 1, 0, 26)"
+      },
+      {
+        "cls": "proof-stage-quotebox proof-reveal",
+        "opacity": "0",
+        "transform": "matrix(1, 0, 0, 1, 0, 26)"
+      },
+      {
+        "cls": "proof-rail proof-reveal",
+        "opacity": "0",
+        "transform": "matrix(1, 0, 0, 1, 0, 26)"
+      },
+      {
+        "cls": "proof-reputation-ghost proof-reveal",
+        "opacity": "0.55",
+        "transform": "matrix(1, 0, 0, 1, 0, -3.33)"
+      },
+      {
+        "cls": "proof-gcard-bridge proof-reveal",
+        "opacity": "0",
+        "transform": "matrix(1, 0, 0, 1, 0, 26)"
+      },
+      {
+        "cls": "proof-gcard-note proof-reveal",
+        "opacity": "0",
+        "transform": "matrix(1, 0, 0, 1, 0, 26)"
+      },
+      {
+        "cls": "proof-signals-eyebrow proof-reveal",
+        "opacity": "0",
+        "transform": "matrix(1, 0, 0, 1, 0, 26)"
+      },
+      {
+        "cls": "proof-signature proof-reveal",
+        "opacity": "0",
+        "transform": "matrix(1, 0, 0, 1, 0, 26)"
+      }
+    ],
+    "lines": [
+      {
+        "text": "A reputation built",
+        "opacity": "1",
+        "transform": "matrix(1, 0, 0, 1, 0, 0)",
+        "visiblePx": 79.40625,
+        "h": 79
+      },
+      {
+        "text": "one experience",
+        "opacity": "1",
+        "transform": "matrix(1, 0, 0, 1, 0, 0)",
+        "visiblePx": 79.40625,
+        "h": 79
+      },
+      {
+        "text": "at a time.",
+        "opacity": "1",
+        "transform": "matrix(1, 0, 0, 1, 0, 0)",
+        "visiblePx": 79.40625,
+        "h": 79
+      }
+    ],
+    "activeQuote": {
+      "opacity": "1",
+      "visibility": "visible"
+    },
+    "railItems": [
+      {
+        "name": "01Spoorthi K.",
+        "opacity": "1",
+        "visible": true
+      },
+      {
+        "name": "02Hamza Mohammed",
+        "opacity": "1",
+        "visible": true
+      },
+      {
+        "name": "03Asma Fatima",
+        "opacity": "1",
+        "visible": true
+      },
+      {
+        "name": "04Sridevi Reddy Ae",
+        "opacity": "1",
+        "visible": true
+      },
+      {
+        "name": "05Syed Afzaal Ahme",
+        "opacity": "1",
+        "visible": true
+      }
+    ],
+    "video": {
+      "hasSrc": true,
+      "poster": true,
+      "readyState": 4,
+      "videoWidth": 1080,
+      "videoHeight": 1920,
+      "paused": false,
+      "currentTime": 13.03,
+      "error": null,
+      "opacity": "1"
+    },
+    "geo": {
+      "open": {
+        "top": 0,
+        "left": 0,
+        "w": 1280,
+        "h": 694,
+        "bottom": 694
+      },
+      "title": {
+        "top": 179,
+        "left": 51,
+        "w": 688,
+        "h": 250,
+        "bottom": 429
+      },
+      "media": {
+        "top": 574,
+        "left": 628,
+        "w": 600,
+        "h": 777,
+        "bottom": 1350
+      },
+      "frame": {
+        "top": 574,
+        "left": 628,
+        "w": 405,
+        "h": 720,
+        "bottom": 1294
+      },
+      "stage": {
+        "top": 734,
+        "left": 51,
+        "w": 500,
+        "h": 495,
+        "bottom": 1229
+      },
+      "rating": {
+        "top": 205,
+        "left": 816,
+        "w": 413,
+        "h": 276,
+        "bottom": 481
+      },
+      "signals": {
+        "top": 1672,
+        "left": 51,
+        "w": 1178,
+        "h": 496,
+        "bottom": 2168
+      }
+    },
+    "reputation": {
+      "card": {
+        "top": 205,
+        "left": 816,
+        "w": 413,
+        "h": 276,
+        "bottom": 481
+      },
+      "ghost": {
+        "top": 1307,
+        "left": -49,
+        "w": 1445,
+        "h": 243,
+        "bottom": 1550
+      },
+      "ghostOpacity": 0.55,
+      "ghostFont": "243.2px",
+      "ghostBehind": 0,
+      "voice": "Sridevi Reddy Aellala",
+      "score": "5.0",
+      "count": "1,147 Google Reviews",
+      "bridge": "The rating is the number. The experience"
+    },
+    "overflowX": 0,
+    "overflowCulprits": [],
+    "boundary": {
+      "heroBottomDoc": 800,
+      "proofTopDoc": 800,
+      "gapPx": 0
+    },
+    "videoAfterSettle": {
+      "hasSrc": true,
+      "readyState": 4,
+      "videoWidth": 1080,
+      "paused": false,
+      "currentTime": 15.21,
+      "error": null,
+      "safeStart": true
+    },
+    "sectionHeight": 2248
+  },
+  {
+    "vw": 1024,
+    "vh": 768,
+    "lcp": 1108,
+    "consoleErrors": [],
+    "proofReady": true,
+    "pending": [
+      {
+        "cls": "proof-stage-eyebrow proof-reveal",
+        "opacity": "0",
+        "transform": "matrix(1, 0, 0, 1, 0, 26)"
+      },
+      {
+        "cls": "proof-stage-quotebox proof-reveal",
+        "opacity": "0",
+        "transform": "matrix(1, 0, 0, 1, 0, 26)"
+      },
+      {
+        "cls": "proof-rail proof-reveal",
+        "opacity": "0",
+        "transform": "matrix(1, 0, 0, 1, 0, 26)"
+      },
+      {
+        "cls": "proof-media proof-reveal",
+        "opacity": "0",
+        "transform": "matrix(1, 0, 0, 1, 0, 26)"
+      },
+      {
+        "cls": "proof-reputation-ghost proof-reveal",
+        "opacity": "0.55",
+        "transform": "matrix(1, 0, 0, 1, 0, -3.75)"
+      },
+      {
+        "cls": "proof-gcard-bridge proof-reveal",
+        "opacity": "0",
+        "transform": "matrix(1, 0, 0, 1, 0, 26)"
+      },
+      {
+        "cls": "proof-gcard-note proof-reveal",
+        "opacity": "0",
+        "transform": "matrix(1, 0, 0, 1, 0, 26)"
+      },
+      {
+        "cls": "proof-signals-eyebrow proof-reveal",
+        "opacity": "0",
+        "transform": "matrix(1, 0, 0, 1, 0, 26)"
+      },
+      {
+        "cls": "proof-signature proof-reveal",
+        "opacity": "0",
+        "transform": "matrix(1, 0, 0, 1, 0, 26)"
+      }
+    ],
+    "lines": [
+      {
+        "text": "A reputation built",
+        "opacity": "1",
+        "transform": "matrix(1, 0, 0, 1, 0, 0)",
+        "visiblePx": 71.234375,
+        "h": 71
+      },
+      {
+        "text": "one experience",
+        "opacity": "1",
+        "transform": "matrix(1, 0, 0, 1, 0, 0)",
+        "visiblePx": 71.234375,
+        "h": 71
+      },
+      {
+        "text": "at a time.",
+        "opacity": "1",
+        "transform": "matrix(1, 0, 0, 1, 0, 0)",
+        "visiblePx": 71.234375,
+        "h": 71
+      }
+    ],
+    "activeQuote": {
+      "opacity": "1",
+      "visibility": "visible"
+    },
+    "railItems": [
+      {
+        "name": "01Spoorthi K.",
+        "opacity": "1",
+        "visible": true
+      },
+      {
+        "name": "02Hamza Mohammed",
+        "opacity": "1",
+        "visible": true
+      },
+      {
+        "name": "03Asma Fatima",
+        "opacity": "1",
+        "visible": true
+      },
+      {
+        "name": "04Sridevi Reddy Ae",
+        "opacity": "1",
+        "visible": true
+      },
+      {
+        "name": "05Syed Afzaal Ahme",
+        "opacity": "1",
+        "visible": true
+      }
+    ],
+    "video": {
+      "hasSrc": false,
+      "poster": true,
+      "readyState": 0,
+      "videoWidth": 0,
+      "videoHeight": 0,
+      "paused": true,
+      "currentTime": 0,
+      "error": null,
+      "opacity": "1"
+    },
+    "geo": {
+      "open": {
+        "top": 0,
+        "left": 0,
+        "w": 1024,
+        "h": 1009,
+        "bottom": 1009
+      },
+      "title": {
+        "top": 173,
+        "left": 41,
+        "w": 942,
+        "h": 224,
+        "bottom": 398
+      },
+      "media": {
+        "top": 974,
+        "left": 503,
+        "w": 480,
+        "h": 733,
+        "bottom": 1706
+      },
+      "frame": {
+        "top": 974,
+        "left": 503,
+        "w": 380,
+        "h": 676,
+        "bottom": 1650
+      },
+      "stage": {
+        "top": 1048,
+        "left": 41,
+        "w": 400,
+        "h": 445,
+        "bottom": 1493
+      },
+      "rating": {
+        "top": 554,
+        "left": 41,
+        "w": 416,
+        "h": 312,
+        "bottom": 865
+      },
+      "signals": {
+        "top": 1983,
+        "left": 41,
+        "w": 942,
+        "h": 478,
+        "bottom": 2461
+      }
+    },
+    "reputation": {
+      "card": {
+        "top": 554,
+        "left": 41,
+        "w": 416,
+        "h": 312,
+        "bottom": 865
+      },
+      "ghost": {
+        "top": 1637,
+        "left": -9,
+        "w": 1156,
+        "h": 195,
+        "bottom": 1831
+      },
+      "ghostOpacity": 0.55,
+      "ghostFont": "194.56px",
+      "ghostBehind": 0,
+      "voice": "Spoorthi K.",
+      "score": "5.0",
+      "count": "1,147 Google Reviews",
+      "bridge": "The rating is the number. The experience"
+    },
+    "overflowX": 0,
+    "overflowCulprits": [],
+    "boundary": {
+      "heroBottomDoc": 768,
+      "proofTopDoc": 768,
+      "gapPx": 0
+    },
+    "videoAfterSettle": {
+      "hasSrc": true,
+      "readyState": 4,
+      "videoWidth": 1080,
+      "paused": false,
+      "currentTime": 1.92,
+      "error": null,
+      "safeStart": false
+    },
+    "sectionHeight": 2537
+  },
+  {
+    "vw": 768,
+    "vh": 1024,
+    "lcp": 484,
+    "consoleErrors": [],
+    "proofReady": true,
+    "pending": [
+      {
+        "cls": "proof-stage-eyebrow proof-reveal",
+        "opacity": "0",
+        "transform": "matrix(1, 0, 0, 1, 0, 26)"
+      },
+      {
+        "cls": "proof-stage-quotebox proof-reveal",
+        "opacity": "0",
+        "transform": "matrix(1, 0, 0, 1, 0, 26)"
+      },
+      {
+        "cls": "proof-rail proof-reveal",
+        "opacity": "0",
+        "transform": "matrix(1, 0, 0, 1, 0, 26)"
+      },
+      {
+        "cls": "proof-media proof-reveal",
+        "opacity": "0",
+        "transform": "matrix(1, 0, 0, 1, 0, 26)"
+      },
+      {
+        "cls": "proof-reputation-ghost proof-reveal",
+        "opacity": "0.55",
+        "transform": "matrix(1, 0, 0, 1, 0, -3.58)"
+      },
+      {
+        "cls": "proof-gcard-bridge proof-reveal",
+        "opacity": "0",
+        "transform": "matrix(1, 0, 0, 1, 0, 26)"
+      },
+      {
+        "cls": "proof-gcard-note proof-reveal",
+        "opacity": "0",
+        "transform": "matrix(1, 0, 0, 1, 0, 26)"
+      },
+      {
+        "cls": "proof-signals-eyebrow proof-reveal",
+        "opacity": "0",
+        "transform": "matrix(1, 0, 0, 1, 0, 26)"
+      },
+      {
+        "cls": "proof-signature proof-reveal",
+        "opacity": "0",
+        "transform": "matrix(1, 0, 0, 1, 0, 26)"
+      }
+    ],
+    "lines": [
+      {
+        "text": "A reputation built",
+        "opacity": "1",
+        "transform": "matrix(1, 0, 0, 1, 0, 0)",
+        "visiblePx": 53.40625,
+        "h": 53
+      },
+      {
+        "text": "one experience",
+        "opacity": "1",
+        "transform": "matrix(1, 0, 0, 1, 0, 0)",
+        "visiblePx": 53.40625,
+        "h": 53
+      },
+      {
+        "text": "at a time.",
+        "opacity": "1",
+        "transform": "matrix(1, 0, 0, 1, 0, 0)",
+        "visiblePx": 53.40625,
+        "h": 53
+      }
+    ],
+    "activeQuote": {
+      "opacity": "1",
+      "visibility": "visible"
+    },
+    "railItems": [
+      {
+        "name": "01Spoorthi K.",
+        "opacity": "1",
+        "visible": true
+      },
+      {
+        "name": "02Hamza Mohammed",
+        "opacity": "1",
+        "visible": true
+      },
+      {
+        "name": "03Asma Fatima",
+        "opacity": "1",
+        "visible": true
+      },
+      {
+        "name": "04Sridevi Reddy Ae",
+        "opacity": "1",
+        "visible": true
+      },
+      {
+        "name": "05Syed Afzaal Ahme",
+        "opacity": "1",
+        "visible": true
+      }
+    ],
+    "video": {
+      "hasSrc": false,
+      "poster": true,
+      "readyState": 0,
+      "videoWidth": 0,
+      "videoHeight": 0,
+      "paused": true,
+      "currentTime": 0,
+      "error": null,
+      "opacity": "1"
+    },
+    "geo": {
+      "open": {
+        "top": 0,
+        "left": 0,
+        "w": 768,
+        "h": 1017,
+        "bottom": 1017
+      },
+      "title": {
+        "top": 222,
+        "left": 31,
+        "w": 707,
+        "h": 168,
+        "bottom": 390
+      },
+      "media": {
+        "top": 962,
+        "left": 31,
+        "w": 707,
+        "h": 777,
+        "bottom": 1738
+      },
+      "frame": {
+        "top": 962,
+        "left": 182,
+        "w": 405,
+        "h": 720,
+        "bottom": 1682
+      },
+      "stage": {
+        "top": 1766,
+        "left": 31,
+        "w": 707,
+        "h": 288,
+        "bottom": 2054
+      },
+      "rating": {
+        "top": 551,
+        "left": 31,
+        "w": 416,
+        "h": 307,
+        "bottom": 857
+      },
+      "signals": {
+        "top": 2407,
+        "left": 31,
+        "w": 707,
+        "h": 662,
+        "bottom": 3069
+      }
+    },
+    "reputation": {
+      "card": {
+        "top": 551,
+        "left": 31,
+        "w": 416,
+        "h": 307,
+        "bottom": 857
+      },
+      "ghost": {
+        "top": 2010,
+        "left": -90,
+        "w": 950,
+        "h": 160,
+        "bottom": 2170
+      },
+      "ghostOpacity": 0.55,
+      "ghostFont": "160px",
+      "ghostBehind": 0,
+      "voice": "Spoorthi K.",
+      "score": "5.0",
+      "count": "1,147 Google Reviews",
+      "bridge": "The rating is the number. The experience"
+    },
+    "overflowX": 7,
+    "overflowCulprits": [
+      {
+        "sel": "div.hero-contours",
+        "right": 893,
+        "left": -125,
+        "w": 1017,
+        "pos": "absolute"
+      },
+      {
+        "sel": "span.hero-contour.hero-contour-a",
+        "right": 495,
+        "left": -268,
+        "w": 763,
+        "pos": "absolute"
+      },
+      {
+        "sel": "span.hero-contour.hero-contour-b",
+        "right": 1085,
+        "left": 420,
+        "w": 665,
+        "pos": "absolute"
+      },
+      {
+        "sel": "span.hero-halo-glow",
+        "right": 614,
+        "left": -100,
+        "w": 714,
+        "pos": "absolute"
+      },
+      {
+        "sel": "span.hero-halo-ring.hero-halo-ring-b",
+        "right": 528,
+        "left": -14,
+        "w": 542,
+        "pos": "absolute"
+      },
+      {
+        "sel": "span.proof-open-bloom",
+        "right": 879,
+        "left": 227,
+        "w": 653,
+        "pos": "absolute"
+      },
+      {
+        "sel": "span.proof-open-ring.proof-open-ring-b",
+        "right": 780,
+        "left": 326,
+        "w": 454,
+        "pos": "absolute"
+      },
+      {
+        "sel": "span.proof-open-contour.proof-open-contour-a",
+        "right": 381,
+        "left": -83,
+        "w": 464,
+        "pos": "absolute"
+      },
+      {
+        "sel": "span.proof-open-contour.proof-open-contour-b",
+        "right": 921,
+        "left": 513,
+        "w": 408,
+        "pos": "absolute"
+      },
+      {
+        "sel": "div.proof-media-plane",
+        "right": 775,
+        "left": -7,
+        "w": 781,
+        "pos": "absolute"
+      },
+      {
+        "sel": "span.proof-reputation-ghost.proof-reveal",
+        "right": 860,
+        "left": -90,
+        "w": 950,
+        "pos": "absolute"
+      }
+    ],
+    "boundary": {
+      "heroBottomDoc": 1024,
+      "proofTopDoc": 1024,
+      "gapPx": 0
+    },
+    "videoAfterSettle": {
+      "hasSrc": true,
+      "readyState": 4,
+      "videoWidth": 1080,
+      "paused": false,
+      "currentTime": 2.22,
+      "error": null,
+      "safeStart": false
+    },
+    "sectionHeight": 3171
+  },
+  {
+    "vw": 484,
+    "vh": 861,
+    "lcp": 568,
+    "consoleErrors": [],
+    "proofReady": true,
+    "pending": [
+      {
+        "cls": "proof-stage-eyebrow proof-reveal",
+        "opacity": "0",
+        "transform": "matrix(1, 0, 0, 1, 0, 26)"
+      },
+      {
+        "cls": "proof-stage-quotebox proof-reveal",
+        "opacity": "0",
+        "transform": "matrix(1, 0, 0, 1, 0, 26)"
+      },
+      {
+        "cls": "proof-rail proof-reveal",
+        "opacity": "0",
+        "transform": "matrix(1, 0, 0, 1, 0, 26)"
+      },
+      {
+        "cls": "proof-media proof-reveal",
+        "opacity": "0",
+        "transform": "matrix(1, 0, 0, 1, 0, 26)"
+      },
+      {
+        "cls": "proof-reputation-ghost proof-reveal",
+        "opacity": "0.55",
+        "transform": "none"
+      },
+      {
+        "cls": "proof-gcard-bridge proof-reveal",
+        "opacity": "0",
+        "transform": "matrix(1, 0, 0, 1, 0, 26)"
+      },
+      {
+        "cls": "proof-gcard-note proof-reveal",
+        "opacity": "0",
+        "transform": "matrix(1, 0, 0, 1, 0, 26)"
+      },
+      {
+        "cls": "proof-signals-eyebrow proof-reveal",
+        "opacity": "0",
+        "transform": "matrix(1, 0, 0, 1, 0, 26)"
+      },
+      {
+        "cls": "proof-signature proof-reveal",
+        "opacity": "0",
+        "transform": "matrix(1, 0, 0, 1, 0, 26)"
+      }
+    ],
+    "lines": [
+      {
+        "text": "A reputation built",
+        "opacity": "1",
+        "transform": "matrix(1, 0, 0, 1, 0, 0)",
+        "visiblePx": 40.609375,
+        "h": 41
+      },
+      {
+        "text": "one experience",
+        "opacity": "1",
+        "transform": "matrix(1, 0, 0, 1, 0, 0)",
+        "visiblePx": 40.609375,
+        "h": 41
+      },
+      {
+        "text": "at a time.",
+        "opacity": "1",
+        "transform": "matrix(1, 0, 0, 1, 0, 0)",
+        "visiblePx": 40.609375,
+        "h": 41
+      }
+    ],
+    "activeQuote": {
+      "opacity": "1",
+      "visibility": "visible"
+    },
+    "railItems": [
+      {
+        "name": "01Spoorthi K.",
+        "opacity": "1",
+        "visible": true
+      },
+      {
+        "name": "02Hamza Mohammed",
+        "opacity": "1",
+        "visible": true
+      },
+      {
+        "name": "03Asma Fatima",
+        "opacity": "1",
+        "visible": true
+      },
+      {
+        "name": "04Sridevi Reddy Ae",
+        "opacity": "1",
+        "visible": true
+      },
+      {
+        "name": "05Syed Afzaal Ahme",
+        "opacity": "1",
+        "visible": true
+      }
+    ],
+    "video": {
+      "hasSrc": false,
+      "poster": true,
+      "readyState": 0,
+      "videoWidth": 0,
+      "videoHeight": 0,
+      "paused": true,
+      "currentTime": 0,
+      "error": null,
+      "opacity": "1"
+    },
+    "geo": {
+      "open": {
+        "top": 0,
+        "left": 0,
+        "w": 480,
+        "h": 943,
+        "bottom": 943
+      },
+      "title": {
+        "top": 187,
+        "left": 20,
+        "w": 440,
+        "h": 128,
+        "bottom": 315
+      },
+      "media": {
+        "top": 935,
+        "left": 20,
+        "w": 440,
+        "h": 537,
+        "bottom": 1472
+      },
+      "frame": {
+        "top": 935,
+        "left": 105,
+        "w": 270,
+        "h": 480,
+        "bottom": 1415
+      },
+      "stage": {
+        "top": 1490,
+        "left": 20,
+        "w": 440,
+        "h": 322,
+        "bottom": 1813
+      },
+      "rating": {
+        "top": 484,
+        "left": 20,
+        "w": 416,
+        "h": 307,
+        "bottom": 791
+      },
+      "signals": {
+        "top": 2130,
+        "left": 20,
+        "w": 440,
+        "h": 643,
+        "bottom": 2773
+      }
+    },
+    "reputation": {
+      "card": {
+        "top": 484,
+        "left": 20,
+        "w": 416,
+        "h": 307,
+        "bottom": 791
+      },
+      "ghost": {
+        "top": 2671,
+        "left": -222,
+        "w": 798,
+        "h": 134,
+        "bottom": 2805
+      },
+      "ghostOpacity": 0.55,
+      "ghostFont": "134.4px",
+      "ghostBehind": 0,
+      "voice": "Spoorthi K.",
+      "score": "5.0",
+      "count": "1,147 Google Reviews",
+      "bridge": "The rating is the number. The experience"
+    },
+    "overflowX": 0,
+    "overflowCulprits": [],
+    "boundary": {
+      "heroBottomDoc": 1177,
+      "proofTopDoc": 1177,
+      "gapPx": 0
+    },
+    "videoAfterSettle": {
+      "hasSrc": true,
+      "readyState": 4,
+      "videoWidth": 1080,
+      "paused": false,
+      "currentTime": 2.17,
+      "error": null,
+      "safeStart": false
+    },
+    "sectionHeight": 2858
+  },
+  {
+    "vw": 432,
+    "vh": 937,
+    "lcp": 664,
+    "consoleErrors": [],
+    "proofReady": true,
+    "pending": [
+      {
+        "cls": "proof-stage-eyebrow proof-reveal",
+        "opacity": "0",
+        "transform": "matrix(1, 0, 0, 1, 0, 26)"
+      },
+      {
+        "cls": "proof-stage-quotebox proof-reveal",
+        "opacity": "0",
+        "transform": "matrix(1, 0, 0, 1, 0, 26)"
+      },
+      {
+        "cls": "proof-rail proof-reveal",
+        "opacity": "0",
+        "transform": "matrix(1, 0, 0, 1, 0, 26)"
+      },
+      {
+        "cls": "proof-media proof-reveal",
+        "opacity": "0",
+        "transform": "matrix(1, 0, 0, 1, 0, 26)"
+      },
+      {
+        "cls": "proof-reputation-ghost proof-reveal",
+        "opacity": "0.55",
+        "transform": "none"
+      },
+      {
+        "cls": "proof-gcard-bridge proof-reveal",
+        "opacity": "0",
+        "transform": "matrix(1, 0, 0, 1, 0, 26)"
+      },
+      {
+        "cls": "proof-gcard-note proof-reveal",
+        "opacity": "0",
+        "transform": "matrix(1, 0, 0, 1, 0, 26)"
+      },
+      {
+        "cls": "proof-signals-eyebrow proof-reveal",
+        "opacity": "0",
+        "transform": "matrix(1, 0, 0, 1, 0, 26)"
+      },
+      {
+        "cls": "proof-signature proof-reveal",
+        "opacity": "0",
+        "transform": "matrix(1, 0, 0, 1, 0, 26)"
+      }
+    ],
+    "lines": [
+      {
+        "text": "A reputation built",
+        "opacity": "1",
+        "transform": "matrix(1, 0, 0, 1, 0, 0)",
+        "visiblePx": 40.609375,
+        "h": 41
+      },
+      {
+        "text": "one experience",
+        "opacity": "1",
+        "transform": "matrix(1, 0, 0, 1, 0, 0)",
+        "visiblePx": 40.609375,
+        "h": 41
+      },
+      {
+        "text": "at a time.",
+        "opacity": "1",
+        "transform": "matrix(1, 0, 0, 1, 0, 0)",
+        "visiblePx": 40.609375,
+        "h": 41
+      }
+    ],
+    "activeQuote": {
+      "opacity": "1",
+      "visibility": "visible"
+    },
+    "railItems": [
+      {
+        "name": "01Spoorthi K.",
+        "opacity": "1",
+        "visible": true
+      },
+      {
+        "name": "02Hamza Mohammed",
+        "opacity": "1",
+        "visible": true
+      },
+      {
+        "name": "03Asma Fatima",
+        "opacity": "1",
+        "visible": true
+      },
+      {
+        "name": "04Sridevi Reddy Ae",
+        "opacity": "1",
+        "visible": true
+      },
+      {
+        "name": "05Syed Afzaal Ahme",
+        "opacity": "1",
+        "visible": true
+      }
+    ],
+    "video": {
+      "hasSrc": false,
+      "poster": true,
+      "readyState": 0,
+      "videoWidth": 0,
+      "videoHeight": 0,
+      "paused": true,
+      "currentTime": 0,
+      "error": null,
+      "opacity": "1"
+    },
+    "geo": {
+      "open": {
+        "top": 0,
+        "left": 0,
+        "w": 430,
+        "h": 987,
+        "bottom": 987
+      },
+      "title": {
+        "top": 202,
+        "left": 20,
+        "w": 390,
+        "h": 128,
+        "bottom": 330
+      },
+      "media": {
+        "top": 976,
+        "left": 20,
+        "w": 390,
+        "h": 537,
+        "bottom": 1512
+      },
+      "frame": {
+        "top": 976,
+        "left": 80,
+        "w": 270,
+        "h": 480,
+        "bottom": 1456
+      },
+      "stage": {
+        "top": 1531,
+        "left": 20,
+        "w": 390,
+        "h": 330,
+        "bottom": 1861
+      },
+      "rating": {
+        "top": 528,
+        "left": 20,
+        "w": 390,
+        "h": 307,
+        "bottom": 835
+      },
+      "signals": {
+        "top": 2219,
+        "left": 20,
+        "w": 390,
+        "h": 666,
+        "bottom": 2885
+      }
+    },
+    "reputation": {
+      "card": {
+        "top": 528,
+        "left": 20,
+        "w": 390,
+        "h": 307,
+        "bottom": 835
+      },
+      "ghost": {
+        "top": 2797,
+        "left": -199,
+        "w": 715,
+        "h": 120,
+        "bottom": 2917
+      },
+      "ghostOpacity": 0.55,
+      "ghostFont": "120.4px",
+      "ghostBehind": 0,
+      "voice": "Spoorthi K.",
+      "score": "5.0",
+      "count": "1,147 Google Reviews",
+      "bridge": "The rating is the number. The experience"
+    },
+    "overflowX": 0,
+    "overflowCulprits": [],
+    "boundary": {
+      "heroBottomDoc": 1142,
+      "proofTopDoc": 1142,
+      "gapPx": 0
+    },
+    "videoAfterSettle": {
+      "hasSrc": true,
+      "readyState": 4,
+      "videoWidth": 1080,
+      "paused": false,
+      "currentTime": 2.2,
+      "error": null,
+      "safeStart": false
+    },
+    "sectionHeight": 2978
+  },
+  {
+    "vw": 391,
+    "vh": 847,
+    "lcp": 476,
+    "consoleErrors": [],
+    "proofReady": true,
+    "pending": [
+      {
+        "cls": "proof-stage-eyebrow proof-reveal",
+        "opacity": "0",
+        "transform": "matrix(1, 0, 0, 1, 0, 26)"
+      },
+      {
+        "cls": "proof-stage-quotebox proof-reveal",
+        "opacity": "0",
+        "transform": "matrix(1, 0, 0, 1, 0, 26)"
+      },
+      {
+        "cls": "proof-rail proof-reveal",
+        "opacity": "0",
+        "transform": "matrix(1, 0, 0, 1, 0, 26)"
+      },
+      {
+        "cls": "proof-media proof-reveal",
+        "opacity": "0",
+        "transform": "matrix(1, 0, 0, 1, 0, 26)"
+      },
+      {
+        "cls": "proof-reputation-ghost proof-reveal",
+        "opacity": "0.55",
+        "transform": "none"
+      },
+      {
+        "cls": "proof-gcard-bridge proof-reveal",
+        "opacity": "0",
+        "transform": "matrix(1, 0, 0, 1, 0, 26)"
+      },
+      {
+        "cls": "proof-gcard-note proof-reveal",
+        "opacity": "0",
+        "transform": "matrix(1, 0, 0, 1, 0, 26)"
+      },
+      {
+        "cls": "proof-signals-eyebrow proof-reveal",
+        "opacity": "0",
+        "transform": "matrix(1, 0, 0, 1, 0, 26)"
+      },
+      {
+        "cls": "proof-signature proof-reveal",
+        "opacity": "0",
+        "transform": "matrix(1, 0, 0, 1, 0, 26)"
+      }
+    ],
+    "lines": [
+      {
+        "text": "A reputation built",
+        "opacity": "1",
+        "transform": "matrix(1, 0, 0, 1, 0, 0)",
+        "visiblePx": 40.609375,
+        "h": 41
+      },
+      {
+        "text": "one experience",
+        "opacity": "1",
+        "transform": "matrix(1, 0, 0, 1, 0, 0)",
+        "visiblePx": 40.609375,
+        "h": 41
+      },
+      {
+        "text": "at a time.",
+        "opacity": "1",
+        "transform": "matrix(1, 0, 0, 1, 0, 0)",
+        "visiblePx": 40.609375,
+        "h": 41
+      }
+    ],
+    "activeQuote": {
+      "opacity": "1",
+      "visibility": "visible"
+    },
+    "railItems": [
+      {
+        "name": "01Spoorthi K.",
+        "opacity": "1",
+        "visible": true
+      },
+      {
+        "name": "02Hamza Mohammed",
+        "opacity": "1",
+        "visible": true
+      },
+      {
+        "name": "03Asma Fatima",
+        "opacity": "1",
+        "visible": true
+      },
+      {
+        "name": "04Sridevi Reddy Ae",
+        "opacity": "1",
+        "visible": true
+      },
+      {
+        "name": "05Syed Afzaal Ahme",
+        "opacity": "1",
+        "visible": true
+      }
+    ],
+    "video": {
+      "hasSrc": false,
+      "poster": true,
+      "readyState": 0,
+      "videoWidth": 0,
+      "videoHeight": 0,
+      "paused": true,
+      "currentTime": 0,
+      "error": null,
+      "opacity": "1"
+    },
+    "geo": {
+      "open": {
+        "top": 0,
+        "left": 0,
+        "w": 390,
+        "h": 987,
+        "bottom": 986
+      },
+      "title": {
+        "top": 185,
+        "left": 20,
+        "w": 350,
+        "h": 128,
+        "bottom": 313
+      },
+      "media": {
+        "top": 979,
+        "left": 20,
+        "w": 350,
+        "h": 553,
+        "bottom": 1531
+      },
+      "frame": {
+        "top": 979,
+        "left": 60,
+        "w": 270,
+        "h": 480,
+        "bottom": 1459
+      },
+      "stage": {
+        "top": 1550,
+        "left": 20,
+        "w": 350,
+        "h": 322,
+        "bottom": 1872
+      },
+      "rating": {
+        "top": 507,
+        "left": 20,
+        "w": 350,
+        "h": 328,
+        "bottom": 834
+      },
+      "signals": {
+        "top": 2235,
+        "left": 20,
+        "w": 350,
+        "h": 659,
+        "bottom": 2894
+      }
+    },
+    "reputation": {
+      "card": {
+        "top": 507,
+        "left": 20,
+        "w": 350,
+        "h": 328,
+        "bottom": 834
+      },
+      "ghost": {
+        "top": 2816,
+        "left": -181,
+        "w": 649,
+        "h": 109,
+        "bottom": 2926
+      },
+      "ghostOpacity": 0.55,
+      "ghostFont": "109.2px",
+      "ghostBehind": 0,
+      "voice": "Spoorthi K.",
+      "score": "5.0",
+      "count": "1,147 Google Reviews",
+      "bridge": "The rating is the number. The experience"
+    },
+    "overflowX": 0,
+    "overflowCulprits": [],
+    "boundary": {
+      "heroBottomDoc": 1105,
+      "proofTopDoc": 1105,
+      "gapPx": 0
+    },
+    "videoAfterSettle": {
+      "hasSrc": true,
+      "readyState": 4,
+      "videoWidth": 1080,
+      "paused": false,
+      "currentTime": 2.2,
+      "error": null,
+      "safeStart": false
+    },
+    "sectionHeight": 2978
+  },
+  {
+    "vw": 375,
+    "vh": 812,
+    "lcp": 424,
+    "consoleErrors": [],
+    "proofReady": true,
+    "pending": [
+      {
+        "cls": "proof-stage-eyebrow proof-reveal",
+        "opacity": "0",
+        "transform": "matrix(1, 0, 0, 1, 0, 26)"
+      },
+      {
+        "cls": "proof-stage-quotebox proof-reveal",
+        "opacity": "0",
+        "transform": "matrix(1, 0, 0, 1, 0, 26)"
+      },
+      {
+        "cls": "proof-rail proof-reveal",
+        "opacity": "0",
+        "transform": "matrix(1, 0, 0, 1, 0, 26)"
+      },
+      {
+        "cls": "proof-media proof-reveal",
+        "opacity": "0",
+        "transform": "matrix(1, 0, 0, 1, 0, 26)"
+      },
+      {
+        "cls": "proof-reputation-ghost proof-reveal",
+        "opacity": "0.55",
+        "transform": "none"
+      },
+      {
+        "cls": "proof-gcard-bridge proof-reveal",
+        "opacity": "0",
+        "transform": "matrix(1, 0, 0, 1, 0, 26)"
+      },
+      {
+        "cls": "proof-gcard-note proof-reveal",
+        "opacity": "0",
+        "transform": "matrix(1, 0, 0, 1, 0, 26)"
+      },
+      {
+        "cls": "proof-signals-eyebrow proof-reveal",
+        "opacity": "0",
+        "transform": "matrix(1, 0, 0, 1, 0, 26)"
+      },
+      {
+        "cls": "proof-signature proof-reveal",
+        "opacity": "0",
+        "transform": "matrix(1, 0, 0, 1, 0, 26)"
+      }
+    ],
+    "lines": [
+      {
+        "text": "A reputation built",
+        "opacity": "1",
+        "transform": "matrix(1, 0, 0, 1, 0, 0)",
+        "visiblePx": 40.609375,
+        "h": 41
+      },
+      {
+        "text": "one experience",
+        "opacity": "1",
+        "transform": "matrix(1, 0, 0, 1, 0, 0)",
+        "visiblePx": 40.609375,
+        "h": 41
+      },
+      {
+        "text": "at a time.",
+        "opacity": "1",
+        "transform": "matrix(1, 0, 0, 1, 0, 0)",
+        "visiblePx": 40.609375,
+        "h": 41
+      }
+    ],
+    "activeQuote": {
+      "opacity": "1",
+      "visibility": "visible"
+    },
+    "railItems": [
+      {
+        "name": "01Spoorthi K.",
+        "opacity": "1",
+        "visible": true
+      },
+      {
+        "name": "02Hamza Mohammed",
+        "opacity": "1",
+        "visible": true
+      },
+      {
+        "name": "03Asma Fatima",
+        "opacity": "1",
+        "visible": true
+      },
+      {
+        "name": "04Sridevi Reddy Ae",
+        "opacity": "1",
+        "visible": true
+      },
+      {
+        "name": "05Syed Afzaal Ahme",
+        "opacity": "1",
+        "visible": true
+      }
+    ],
+    "video": {
+      "hasSrc": false,
+      "poster": true,
+      "readyState": 0,
+      "videoWidth": 0,
+      "videoHeight": 0,
+      "paused": true,
+      "currentTime": 0,
+      "error": null,
+      "opacity": "1"
+    },
+    "geo": {
+      "open": {
+        "top": -45,
+        "left": 0,
+        "w": 375,
+        "h": 999,
+        "bottom": 954
+      },
+      "title": {
+        "top": 134,
+        "left": 20,
+        "w": 335,
+        "h": 128,
+        "bottom": 262
+      },
+      "media": {
+        "top": 948,
+        "left": 20,
+        "w": 335,
+        "h": 553,
+        "bottom": 1500
+      },
+      "frame": {
+        "top": 948,
+        "left": 53,
+        "w": 270,
+        "h": 480,
+        "bottom": 1428
+      },
+      "stage": {
+        "top": 1519,
+        "left": 20,
+        "w": 335,
+        "h": 377,
+        "bottom": 1897
+      },
+      "rating": {
+        "top": 480,
+        "left": 20,
+        "w": 335,
+        "h": 328,
+        "bottom": 808
+      },
+      "signals": {
+        "top": 2253,
+        "left": 20,
+        "w": 335,
+        "h": 656,
+        "bottom": 2909
+      }
+    },
+    "reputation": {
+      "card": {
+        "top": 480,
+        "left": 20,
+        "w": 335,
+        "h": 328,
+        "bottom": 808
+      },
+      "ghost": {
+        "top": 2836,
+        "left": -174,
+        "w": 624,
+        "h": 105,
+        "bottom": 2941
+      },
+      "ghostOpacity": 0.55,
+      "ghostFont": "105px",
+      "ghostBehind": 0,
+      "voice": "Spoorthi K.",
+      "score": "5.0",
+      "count": "1,147 Google Reviews",
+      "bridge": "The rating is the number. The experience"
+    },
+    "overflowX": 0,
+    "overflowCulprits": [],
+    "boundary": {
+      "heroBottomDoc": 1086,
+      "proofTopDoc": 1086,
+      "gapPx": 0
+    },
+    "videoAfterSettle": {
+      "hasSrc": true,
+      "readyState": 4,
+      "videoWidth": 1080,
+      "paused": false,
+      "currentTime": 2.11,
+      "error": null,
+      "safeStart": false
+    },
+    "sectionHeight": 3035
+  },
+  {
+    "vw": 360,
+    "vh": 800,
+    "lcp": 1052,
+    "consoleErrors": [],
+    "proofReady": true,
+    "pending": [
+      {
+        "cls": "proof-stage-eyebrow proof-reveal",
+        "opacity": "0",
+        "transform": "matrix(1, 0, 0, 1, 0, 26)"
+      },
+      {
+        "cls": "proof-stage-quotebox proof-reveal",
+        "opacity": "0",
+        "transform": "matrix(1, 0, 0, 1, 0, 26)"
+      },
+      {
+        "cls": "proof-rail proof-reveal",
+        "opacity": "0",
+        "transform": "matrix(1, 0, 0, 1, 0, 26)"
+      },
+      {
+        "cls": "proof-media proof-reveal",
+        "opacity": "0",
+        "transform": "matrix(1, 0, 0, 1, 0, 26)"
+      },
+      {
+        "cls": "proof-reputation-ghost proof-reveal",
+        "opacity": "0.55",
+        "transform": "none"
+      },
+      {
+        "cls": "proof-gcard-bridge proof-reveal",
+        "opacity": "0",
+        "transform": "matrix(1, 0, 0, 1, 0, 26)"
+      },
+      {
+        "cls": "proof-gcard-note proof-reveal",
+        "opacity": "0",
+        "transform": "matrix(1, 0, 0, 1, 0, 26)"
+      },
+      {
+        "cls": "proof-signals-eyebrow proof-reveal",
+        "opacity": "0",
+        "transform": "matrix(1, 0, 0, 1, 0, 26)"
+      },
+      {
+        "cls": "proof-signature proof-reveal",
+        "opacity": "0",
+        "transform": "matrix(1, 0, 0, 1, 0, 26)"
+      }
+    ],
+    "lines": [
+      {
+        "text": "A reputation built",
+        "opacity": "1",
+        "transform": "matrix(1, 0, 0, 1, 0, 0)",
+        "visiblePx": 40.609375,
+        "h": 41
+      },
+      {
+        "text": "one experience",
+        "opacity": "1",
+        "transform": "matrix(1, 0, 0, 1, 0, 0)",
+        "visiblePx": 40.609375,
+        "h": 41
+      },
+      {
+        "text": "at a time.",
+        "opacity": "1",
+        "transform": "matrix(1, 0, 0, 1, 0, 0)",
+        "visiblePx": 40.609375,
+        "h": 41
+      }
+    ],
+    "activeQuote": {
+      "opacity": "1",
+      "visibility": "visible"
+    },
+    "railItems": [
+      {
+        "name": "01Spoorthi K.",
+        "opacity": "1",
+        "visible": true
+      },
+      {
+        "name": "02Hamza Mohammed",
+        "opacity": "1",
+        "visible": true
+      },
+      {
+        "name": "03Asma Fatima",
+        "opacity": "1",
+        "visible": true
+      },
+      {
+        "name": "04Sridevi Reddy Ae",
+        "opacity": "1",
+        "visible": true
+      },
+      {
+        "name": "05Syed Afzaal Ahme",
+        "opacity": "1",
+        "visible": true
+      }
+    ],
+    "video": {
+      "hasSrc": false,
+      "poster": true,
+      "readyState": 0,
+      "videoWidth": 0,
+      "videoHeight": 0,
+      "paused": true,
+      "currentTime": 0,
+      "error": null,
+      "opacity": "1"
+    },
+    "geo": {
+      "open": {
+        "top": 0,
+        "left": 0,
+        "w": 360,
+        "h": 994,
+        "bottom": 994
+      },
+      "title": {
+        "top": 177,
+        "left": 20,
+        "w": 320,
+        "h": 128,
+        "bottom": 304
+      },
+      "media": {
+        "top": 988,
+        "left": 20,
+        "w": 320,
+        "h": 553,
+        "bottom": 1540
+      },
+      "frame": {
+        "top": 988,
+        "left": 45,
+        "w": 270,
+        "h": 480,
+        "bottom": 1468
+      },
+      "stage": {
+        "top": 1559,
+        "left": 20,
+        "w": 320,
+        "h": 389,
+        "bottom": 1948
+      },
+      "rating": {
+        "top": 522,
+        "left": 20,
+        "w": 320,
+        "h": 328,
+        "bottom": 850
+      },
+      "signals": {
+        "top": 2302,
+        "left": 20,
+        "w": 320,
+        "h": 655,
+        "bottom": 2957
+      }
+    },
+    "reputation": {
+      "card": {
+        "top": 522,
+        "left": 20,
+        "w": 320,
+        "h": 328,
+        "bottom": 850
+      },
+      "ghost": {
+        "top": 2885,
+        "left": -186,
+        "w": 618,
+        "h": 104,
+        "bottom": 2989
+      },
+      "ghostOpacity": 0.55,
+      "ghostFont": "104px",
+      "ghostBehind": 0,
+      "voice": "Spoorthi K.",
+      "score": "5.0",
+      "count": "1,147 Google Reviews",
+      "bridge": "The rating is the number. The experience"
+    },
+    "overflowX": 0,
+    "overflowCulprits": [],
+    "boundary": {
+      "heroBottomDoc": 1068,
+      "proofTopDoc": 1068,
+      "gapPx": 0
+    },
+    "videoAfterSettle": {
+      "hasSrc": true,
+      "readyState": 4,
+      "videoWidth": 1080,
+      "paused": false,
+      "currentTime": 2.16,
+      "error": null,
+      "safeStart": false
+    },
+    "sectionHeight": 3037
+  }
+]

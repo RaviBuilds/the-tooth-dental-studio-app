@@ -168,7 +168,7 @@ a { color:inherit; text-decoration:none; }
 .hero-copy-wrap {
   position: relative; z-index: 6;
   order: 1;
-  padding: 6rem 1.4rem 0;
+  padding: 8.25rem 1.4rem 0;
   transform: translate3d(calc(var(--hero-x,0) * .15rem), calc(var(--hero-y,0) * .1rem - var(--hero-scroll,0) * 2.4rem), 0);
   transition: transform .5s cubic-bezier(.22,.8,.24,1);
 }
@@ -201,7 +201,7 @@ a { color:inherit; text-decoration:none; }
 .hero-cta-primary > * { position: relative; z-index: 1; }
 .hero-cta-primary::before { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(255,255,255,.16), transparent 55%); opacity: 0; transition: opacity .3s ease; }
 .hero-cta-primary:hover, .hero-cta-primary:focus-visible { transform: translateY(-2px); box-shadow: 0 .6rem 1.6rem rgba(197,164,91,.34), inset 0 1px 0 rgba(255,255,255,.32); }
-.hero-cta-primary:hover::before, .hero-cta-primary:focus-visible::before { opacity: 1; }
+.hero-cta-primary:hover::before, .hero-cta-primary:focus-visible::before { opacity:arg 1; }
 .hero-cta-arrow { display: inline-block; transition: transform .3s cubic-bezier(.22,.8,.24,1); }
 .hero-cta-primary:hover .hero-cta-arrow { transform: translate(3px,-3px); }
 .hero-cta-primary:active { transform: translateY(0) scale(.99); }
@@ -328,7 +328,7 @@ a { color:inherit; text-decoration:none; }
 @media (max-width: 767px) and (max-height: 700px) {
   .hero-figure { width: min(80vw, 46svh); height: min(80vw, 46svh); }
   .hero-headline { font-size: clamp(2.6rem, 12.5vw, 4rem); }
-  .hero-copy-wrap { padding-top: 5.5rem; }
+  .hero-copy-wrap { padding-top: 7.5rem; }
 }
 
 /* Very small phones - protect label/credential from collision */
@@ -377,7 +377,7 @@ a { color:inherit; text-decoration:none; }
   .hero-headline { font-size: clamp(4.4rem, 6.4vw, 8rem); }
   .hero-credential { right: clamp(3rem, 4.5vw, 5.5rem); }
   .hero-figure { width: min(42vw, calc(105svh - 19rem), 94svh); height: min(42vw, calc(105svh - 19rem), 94svh); }
-  .hero-voice-slot { left: clamp(1.25rem, 2.2vw, 2.75rem); right: auto; top: clamp(6.5rem, 10%, 9rem); bottom: auto; width: 13.5rem; --voice-from-x: -55vw; --voice-from-y: 8vh; --voice-from-r: -6deg; }
+  .hero-voice-slot { left: clamp(1.25rem, 2.2vw, 2.75rem); right: auto; top: clamp(9.25rem, 15%, 11.5rem); bottom: auto; width: 13.5rem; --voice-from-x: -55vw; --voice-from-y: 8vh; --voice-from-r: -6deg; }
   /* desktop flight: off-screen left -> upper doctor field -> settle;
      exits travel up-right toward the trust credential */
   .hero-voice-out { transform: translate3d(52vw, -18vh, 0) rotate(3deg); }
@@ -461,3 +461,723 @@ a { color:inherit; text-decoration:none; }
 /* Patient Voice gentle existence between entrance and exit */
 .hero-voice-body { display: block; animation: voice-breathe 5.5s ease-in-out infinite alternate; }
 @keyframes voice-breathe { from { transform: translateY(0) } to { transform: translateY(-3px) } }
+
+/* ================================================================
+   SECTION 02 — "THE PROOF BEHIND THE REPUTATION"  (The Bridge)
+   Patient proof as protagonist:
+     VIDEO (real treatment) -> VOICE (verified reviews) ->
+     5.0 / 1,147 (reputation ground) -> CULTURE SIGNALS.
+   The portrait video crosses the hero's dark end tone into the
+   warm ivory proof zone — the section's central art direction.
+   Reveal gating: .proof[data-proof-ready] is set from Proof.tsx,
+   so every element stays fully visible without JavaScript.
+   All motion is transform/opacity only. Reduced motion: calm.
+   ================================================================ */
+.proof {
+  --gold-ink: #6f5a26;
+  --ink-soft: #55524a; /* darkened note ink - subordinate but clearly legible */ /* contrast-safe gold for text on ivory (≈5.8:1) */
+  --proof-overlap: clamp(4rem, 9vh, 6.5rem);
+  font-family: var(--font-geist-sans), Arial, sans-serif;
+}
+.proof-shell { max-width: 1680px; margin-inline: auto; padding-inline: clamp(1.25rem, 4vw, 4rem); }
+
+/* ---------- Chapter handoff - continues the hero's end tone ---------- */
+.proof-open {
+  position: relative;
+  overflow: hidden;
+  color: var(--background);
+  /* Same material as the hero: identical gradient + light stack from
+     Section 01. A short dark veil at the very top dissolves the hero's
+     end tone into the hero's own opening atmosphere — one continuous
+     world instead of a new block. */
+  background:
+    linear-gradient(180deg, #121412 0%, rgba(18, 20, 18, 0) 24%),
+    radial-gradient(110% 85% at 74% 0%, rgba(197, 164, 91, 0.055), transparent 52%),
+    radial-gradient(85% 75% at 10% 112%, rgba(9, 11, 10, 0.75), transparent 62%),
+    linear-gradient(158deg, #242826 0%, #1d211f 44%, #121412 100%);
+  padding: clamp(6rem, 15vh, 10.5rem) 0 clamp(7rem, 18vh, 9.5rem);
+}
+
+/* Hero-kinetic atmosphere carried over from Section 01: bloom, halo
+   rings, contour ellipses and the gold margin filament, all breathing
+   on the same slow clock as the hero (shared keyframes). */
+.proof-open-field { position: absolute; inset: 0; z-index: 0; pointer-events: none; }
+.proof-open-bloom {
+  position: absolute; left: 72%; top: -12%; width: 85%; aspect-ratio: 1;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle, rgba(244, 240, 232, 0.09) 0%, rgba(244, 240, 232, 0.035) 30%, rgba(197, 164, 91, 0.05) 48%, transparent 68%);
+  animation: field-breathe 14s ease-in-out infinite alternate;
+}
+.proof-open-ring {
+  position: absolute; left: 72%; top: -12%; transform: translate(-50%, -50%);
+  border: 1px solid rgba(244, 240, 232, 0.06); border-radius: 50%;
+}
+.proof-open-ring-a { width: 42%; aspect-ratio: 1; animation: ring-a 20s ease-in-out infinite alternate; }
+.proof-open-ring-b { width: 58%; aspect-ratio: 1; border-color: rgba(197, 164, 91, 0.08); animation: ring-b 26s ease-in-out infinite alternate; }
+.proof-open-contour { position: absolute; border-radius: 50%; border: 1px solid rgba(244, 240, 232, 0.045); }
+.proof-open-contour-a { top: -24%; left: -14%; width: 58%; aspect-ratio: 1; animation: contour-a 30s ease-in-out infinite alternate; }
+.proof-open-contour-b { bottom: -30%; right: -16%; width: 52%; aspect-ratio: 1.2; border-color: rgba(197, 164, 91, 0.06); animation: contour-c 34s ease-in-out infinite alternate; }
+/* The hero's left-margin field line, continued into the chapter. */
+.proof-open-thread {
+  position: absolute; top: 0; bottom: 0; left: clamp(1.25rem, 4vw, 4rem); width: 1px;
+  background: linear-gradient(to bottom, rgba(197, 164, 91, 0.28), rgba(197, 164, 91, 0.06) 55%, transparent);
+}
+.proof-open-inner { position: relative; z-index: 1; }
+/* Title copy left, Google trust card right — the card floats in the dark
+   negative space where the white Google material reads as an artifact. */
+.proof-open-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: clamp(2.2rem, 5vw, 3rem);
+}
+.proof-open-copy { min-width: 0; }
+.proof-open-card {
+  position: relative;
+  z-index: 1;
+  justify-self: start;
+  width: min(100%, 26rem);
+}
+.proof-open-card .proof-gcard { box-shadow: 0 32px 80px -34px rgba(0, 0, 0, 0.6); }
+.proof-eyebrow-row { display: flex; align-items: center; gap: 0.9rem; margin: 0; }
+.proof-index {
+  font: 600 11px/1 var(--font-geist-mono), monospace;
+  letter-spacing: 0.18em;
+  color: var(--gold);
+  border: 1px solid rgba(197, 164, 91, 0.45);
+  padding: 0.45rem 0.6rem;
+}
+.proof-eyebrow {
+  font: 600 11px/1.2 var(--font-geist-mono), monospace;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(244, 240, 232, 0.72);
+}
+.proof-title { margin: clamp(1.6rem, 4vh, 2.6rem) 0 0; font-size: clamp(2.7rem, 7.4vw, 8.25rem); line-height: 0.94; }
+.proof-title-line { display: block; overflow: hidden; padding-bottom: 0.14em; margin-bottom: -0.14em; }
+/* The closing phrase carries the hero's gold-line treatment into the
+   chapter — Cormorant italic in gold, the section's signature flourish. */
+.proof-title-em { font-style: italic; color: var(--gold); }
+.proof-intro {
+  margin: clamp(1.8rem, 4.5vh, 3rem) 0 0;
+  max-width: 34rem;
+  font-size: 15.5px;
+  line-height: 1.75;
+  color: rgba(244, 240, 232, 0.66);
+}
+
+/* ---------- The Bridge - ivory proof zone ---------- */
+.proof-body {
+  position: relative;
+  background: linear-gradient(180deg, #ece6d9 0%, var(--background) 10%, var(--background) 88%, #e7e0d1 100%);
+  padding-bottom: clamp(4.5rem, 10vh, 8rem);
+}
+.proof-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(2.8rem, 7vw, 4rem);
+  padding-top: clamp(2rem, 5vh, 3.5rem);
+  align-items: start;
+}
+
+/* ---------- The video: primary visual anchor, crossing the boundary ---------- */
+.proof-media { order: -1; position: relative; z-index: 2; margin-top: calc(-1 * var(--proof-overlap)); }
+.proof-media-plane {
+  position: absolute;
+  z-index: -1;
+  top: 6%;
+  left: -8%;
+  right: 14%;
+  bottom: -4%;
+  background: #ece6d9; /* unified with the .proof-body entry band — no tone step at the plane edge */
+  border: 1px solid var(--line);
+  /* slight desk-laid tilt: the plane reads as paper under the print, not a
+     parallel card (the scroll handler composes its translate on top) */
+  transform: rotate(-1.4deg);
+  will-change: transform;
+}
+.proof-frame {
+  position: relative;
+  /* Width resolves from height via aspect-ratio, so below the two-column
+     layout the frame is narrower than its container — auto margins keep it
+     centered instead of hugging the left edge. Desktop restores the column-start alignment. */
+  margin-inline: auto;
+  height: min(72vh, 620px);
+  height: min(72svh, 620px);
+  max-width: 88vw;
+  aspect-ratio: 9 / 16;
+  background: linear-gradient(165deg, #262a28, #121412);
+  border: 1px solid rgba(29, 33, 31, 0.28);
+  box-shadow: 0 30px 70px -38px rgba(29, 33, 31, 0.5);
+}
+/* Photographed-edge vignette: the footage reads as filmed, not pasted.
+   Sits above the video, below the frame rail. */
+.proof-frame::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  box-shadow:
+    inset 0 0 64px rgba(18, 20, 18, 0.32),
+    inset 0 1px 0 rgba(244, 240, 232, 0.07);
+}
+/* Offset gold mat — a second print border, shifted up-left like a double mat. */
+.proof-frame-mat {
+  position: absolute;
+  z-index: -1;
+  top: -14px;
+  left: -14px;
+  width: 100%;
+  height: 100%;
+  border: 1px solid rgba(197, 164, 91, 0.4);
+  pointer-events: none;
+}
+/* Viewfinder corner ticks — registration marks that say "footage" without a word. */
+.proof-tick {
+  position: absolute;
+  z-index: 3;
+  width: 18px;
+  height: 18px;
+  pointer-events: none;
+  opacity: 0.85;
+  transition: transform 0.35s ease, opacity 0.35s ease;
+}
+.proof-tick-tl { top: -8px; left: -8px; border-top: 1.5px solid var(--gold); border-left: 1.5px solid var(--gold); }
+.proof-tick-tr { top: -8px; right: -8px; border-top: 1.5px solid var(--gold); border-right: 1.5px solid var(--gold); }
+.proof-tick-bl { bottom: -8px; left: -8px; border-bottom: 1.5px solid var(--gold); border-left: 1.5px solid var(--gold); }
+.proof-tick-br { bottom: -8px; right: -8px; border-bottom: 1.5px solid var(--gold); border-right: 1.5px solid var(--gold); }
+.proof-media:hover .proof-tick { opacity: 1; }
+.proof-media:hover .proof-tick-tl { transform: translate(-3px, -3px); }
+.proof-media:hover .proof-tick-tr { transform: translate(3px, -3px); }
+.proof-media:hover .proof-tick-bl { transform: translate(-3px, 3px); }
+.proof-media:hover .proof-tick-br { transform: translate(3px, 3px); }
+/* The poster (a real frame from the treatment video) is the pre-load
+   state, so the element never presents as an empty dark slab. Once the
+   lazy source paints its first frame the footage simply takes over —
+   poster and first frame are the same footage, so the swap is seamless. */
+.proof-video { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center; background: linear-gradient(165deg, #262a28, #121412); }
+.proof-frame-rail {
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.6rem 1.1rem 1rem;
+  background: linear-gradient(180deg, transparent, rgba(18, 20, 18, 0.82));
+  color: var(--background);
+}
+.proof-rail-live-group { display: flex; flex-direction: column; gap: 0.45rem; min-width: 0; }
+.proof-rail-doctor {
+  font-family: var(--font-cormorant), Georgia, serif;
+  font-weight: 600;
+  font-size: clamp(1.15rem, 1.8vw, 1.5rem);
+  line-height: 1;
+  letter-spacing: 0.02em;
+  color: #f4f0e8;
+  text-shadow: 0 1px 12px rgba(18, 20, 18, 0.55), 0 1px 2px rgba(18, 20, 18, 0.45);
+}
+.proof-rail-live { display: inline-flex; align-items: center; gap: 0.55rem; font: 600 9.5px/1 var(--font-geist-mono), monospace; letter-spacing: 0.18em; color: rgba(244, 240, 232, 0.85); }
+.proof-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--gold); animation: proof-pulse 2.4s ease-in-out infinite; }
+@keyframes proof-pulse { 0%, 100% { opacity:arg 1; } 50% { opacity: 0.35; } }
+.proof-video-toggle {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 2.5rem; height: 2.5rem;
+  border: 1px solid rgba(244, 240, 232, 0.4);
+  border-radius: 50%;
+  color: var(--background);
+  background: rgba(18, 20, 18, 0.35);
+  transition: border-color 0.25s ease, color 0.25s ease, transform 0.25s ease;
+}
+.proof-video-toggle:hover { border-color: var(--gold); color: var(--gold); transform: scale(1.05); }
+.proof-media-caption {
+  display: flex; flex-direction: column; gap: 0.45rem;
+  margin-top: 1.1rem;
+  font: 500 10px/1.6 var(--font-geist-mono), monospace;
+  letter-spacing: 0.16em;
+}
+.proof-media-caption span:first-child { color: var(--foreground); }
+.proof-media-caption span:last-child { color: var(--muted); }
+
+/* ---------- Voice stage — one verified voice at a time ---------- */
+.proof-stage { display: flex; flex-direction: column; }
+.proof-stage-eyebrow {
+  display: flex; align-items: center; gap: 0.7rem; margin: 0;
+  font: 600 10.5px/1.2 var(--font-geist-mono), monospace;
+  letter-spacing: 0.2em;
+  color: var(--muted);
+}
+.proof-stage-rule { width: 26px; height: 1px; background: var(--gold-ink); flex: none; }
+.proof-stage-quotebox { display: grid; margin-top: clamp(1.8rem, 4vh, 2.8rem); }
+.proof-quote {
+  grid-area: 1 / 1;
+  margin: 0;
+  opacity: 0;
+  transform: translateY(10px);
+  visibility: hidden;
+  transition: opacity 0.55s ease, transform 0.55s ease, visibility 0s linear 0.55s;
+}
+.proof-quote.is-active {
+  opacity: 1;
+  transform: none;
+  visibility: visible;
+  transition: opacity 0.55s ease 0.08s, transform 0.55s ease 0.08s;
+}
+.proof-quote blockquote { margin: 0; position: relative; padding-left: clamp(2.4rem, 4vw, 3.4rem); }
+.proof-quote blockquote::before {
+  content: "\201C";
+  position: absolute;
+  left: 0;
+  top: -0.08em;
+  font-family: var(--font-cormorant), Georgia, serif;
+  font-size: 2.9em;
+  line-height: 1;
+  color: var(--gold-ink);
+}
+.proof-quote blockquote p {
+  margin: 0;
+  font-family: var(--font-cormorant), Georgia, serif;
+  font-weight: 500;
+  font-size: clamp(1.45rem, 2.2vw, 1.95rem);
+  line-height: 1.28;
+  letter-spacing: -0.015em;
+  color: var(--foreground);
+}
+.proof-quote figcaption {
+  display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.6rem 1.1rem;
+  margin-top: 1.4rem;
+  padding-left: clamp(2.4rem, 4vw, 3.4rem);
+}
+.proof-quote-name { font: 600 11px/1.4 var(--font-geist-mono), monospace; letter-spacing: 0.16em; text-transform: uppercase; color: var(--foreground); }
+.proof-quote-meta { font: 500 9.5px/1.4 var(--font-geist-mono), monospace; letter-spacing: 0.18em; color: var(--muted); }
+
+/* Voice rail — keyboard-selectable index, in rhythm with the video */
+.proof-rail {
+  display: flex; flex-wrap: wrap; gap: 0.35rem 1.4rem;
+  margin-top: clamp(2rem, 5vh, 3.2rem);
+  padding-top: 1.4rem;
+  border-top: 1px solid var(--line);
+}
+.proof-rail-item {
+  position: relative;
+  display: inline-flex; align-items: baseline; gap: 0.5rem;
+  padding: 0.4rem 0.1rem;
+  background: none; border: 0; cursor: pointer;
+  color: var(--muted);
+  transition: color 0.25s ease;
+}
+.proof-rail-item:hover, .proof-rail-item.is-active { color: var(--foreground); }
+.proof-rail-num { font: 600 9.5px/1 var(--font-geist-mono), monospace; letter-spacing: 0.1em; color: var(--gold-ink); }
+.proof-rail-name { font: 600 10.5px/1.2 var(--font-geist-mono), monospace; letter-spacing: 0.14em; text-transform: uppercase; }
+.proof-rail-progress {
+  position: absolute; left: 0; bottom: 0;
+  height: 1.5px; width: 100%;
+  background: var(--gold-ink);
+  transform-origin: left;
+  animation: proof-progress 7s linear both;
+}
+@keyframes proof-progress { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+
+/* ---------- Reputation ground - Google-review card + ghost word ---------- */
+.proof-reputation {
+  position: relative;
+  overflow: clip;
+  padding-top: clamp(4.5rem, 12vh, 7.5rem);
+}
+.proof-reputation-ghost {
+  position: absolute;
+  z-index: 0;
+  top: -2.5rem;
+  right: -12%;
+  font-family: var(--font-cormorant), Georgia, serif;
+  font-weight: 500;
+  font-size: clamp(10rem, 19vw, 21rem);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+  color: rgba(29, 33, 31, 0.05);
+  pointer-events: none;
+  user-select: none;
+  will-change: transform;
+}
+/* The ghost word sits on the reveal clock but never depends on the scroll
+   gate to be visible: it holds a soft floor (0.55) and calmly deepens
+   to full once revealed — never a missing layer, never an animation. */
+/* The card: familiar Google rating hierarchy on an original premium surface.
+   Local UI only - no widget, no API, no sync, no fake chrome. */
+/* ---------- Google My Business–styled reputation card: authentic Google grammar, verified local data only ---------- */
+.proof-gcard {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  width: min(100%, 30rem);
+  padding: 1.6rem 1.7rem 1.55rem;
+  background: #ffffff;
+  border: 1px solid #dadce0;
+  border-radius: 8px;
+  box-shadow:
+    0 1px 2px rgba(60, 64, 67, 0.3),
+    0 2px 6px 2px rgba(60, 64, 67, 0.15);
+  font-family: var(--font-groboto), Roboto, "Segoe UI", Arial, sans-serif;
+}
+.proof-gcard-head { display: flex; align-items: center; gap: 0.6rem; }
+.proof-gcard-glogo { width: 22px; height: 22px; flex: none; }
+.proof-gcard-headline { margin: 0; font-size: 15px; font-weight: 500; line-height: 1.3; letter-spacing: 0.005em; color: #202124; }
+.proof-gcard-rating { display: flex; align-items: center; gap: 1.05rem; margin-top: 1.1rem; }
+.proof-gcard-score { font-size: clamp(2.9rem, 5vw, 3.6rem); font-weight: 400; line-height: 1; letter-spacing: -0.015em; color: #202124; }
+.proof-gcard-ratingcol { display: flex; flex-direction: column; gap: 0.4rem; }
+.proof-gcard-stars { display: inline-flex; align-items: center; gap: 2px; }
+.proof-gcard-star { width: 20px; height: 20px; flex: none; fill: #fbbc04; }
+.proof-gcard-star--sm { width: 13px; height: 13px; }
+.proof-gcard-count { margin: 0; font-size: 14px; font-weight: 400; line-height: 1.3; color: #70757a; }
+.proof-gcard-rule { height: 1px; background: #e8eaed; margin: 1.25rem 0 1.05rem; }
+.proof-gcard-voice-label { margin: 0; font-size: 10.5px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: #70757a; }
+.proof-gcard-review { display: flex; align-items: flex-start; gap: 0.85rem; margin-top: 0.75rem; }
+.proof-gcard-avatar {
+  display: flex; align-items: center; justify-content: center;
+  width: 36px; height: 36px; flex: none; border-radius: 50%;
+  color: #fff; font-size: 15px; font-weight: 500; line-height: 1;
+}
+.proof-gcard-reviewbody { display: flex; flex-direction: column; gap: 0.28rem; min-width: 0; }
+.proof-gcard-voice-name { font-size: 14px; font-weight: 500; line-height: 1.3; color: #202124; }
+.proof-gcard-reviewstars { display: inline-flex; align-items: center; gap: 2px; }
+.proof-gcard-quote { margin: 0; font-size: 13.5px; font-weight: 400; line-height: 1.55; color: #5f6368; }
+/* --- Creative layer: brand-frame, G watermark, voice crossfade, cycle pulse.
+       Still unmistakably Google grammar - just alive. --- */
+/* Inner hairline frame: the studio's gold meeting Google's white surface */
+.proof-gcard::before {
+  content: ""; position: absolute; inset: 5px; z-index: 0; pointer-events: none;
+  border: 1px solid rgba(197, 164, 91, 0.26); border-radius: 5px;
+}
+/* Oversized G bleeding off the bottom-right corner - subliminal familiarity */
+.proof-gcard-gmark {
+  position: absolute; right: -16px; bottom: -24px; z-index: 0;
+  width: 132px; height: 132px; opacity: 0.05; pointer-events: none;
+}
+/* Each voice swap slides the review in, echoing the stage above */
+@keyframes proof-gcard-swap {
+  from { opacity: 0; transform: translateY(7px); }
+  to { opacity: 1; transform: none; }
+}
+.proof-gcard-review { animation: proof-gcard-swap 0.5s cubic-bezier(0.22, 0.8, 0.24, 1) 0.06s both; }
+/* Cycle pulse: a 2px Google-blue heartbeat along the card's base, keyed to
+   the same 7s HOLD_MS rhythm as the voice stage - the card and the stage
+   breathe together. Pure editorial affordance, not live-data chrome. */
+.proof-gcard-progress {
+  position: absolute; left: 0; right: 0; bottom: 0; z-index: 1;
+  height: 2px; background: #1a73e8; transform-origin: left;
+  animation: proof-progress 7s linear both;
+}
+.proof-gcard-bridge { margin: 1.6rem 0 0; font-family: var(--font-cormorant), Georgia, serif; font-weight: 500; font-size: clamp(1.25rem, 2vw, 1.5rem); line-height: 1.25; color: var(--foreground); }
+.proof-gcard-bridge em { font-style: italic; color: var(--gold-ink); }
+.proof-gcard-note { position: relative; z-index: 1; margin: 1.2rem 0 0; max-width: 32rem; font-size: 13.5px; line-height: 1.75; color: var(--muted); }
+/* ---------- Culture signals — annotations on one path, never cards ---------- */
+.proof-signals { position: relative; z-index: 1; margin-top: clamp(3.5rem, 9vh, 6rem); }
+.proof-signals-eyebrow {
+  margin: 0;
+  font: 600 10.5px/1.2 var(--font-geist-mono), monospace;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.proof-signal-path {
+  display: flex; flex-direction: column; gap: 1.7rem;
+  margin: 2.2rem 0 0;
+  padding: 0 0 0 1.4rem;
+  list-style: none;
+  border-left: 1px solid var(--line);
+}
+.proof-signal { position: relative; display: flex; flex-direction: column; gap: 0.35rem; }
+.proof-signal-stem { display: none; }
+.proof-signal-thread { display: none; }
+.proof-signal-node {
+  position: absolute;
+  left: calc(-1.4rem - 4.5px);
+  top: 0.55em;
+  width: 8px; height: 8px;
+  background: var(--gold);
+  transform: rotate(45deg);
+}
+.proof-signal-node::after {
+  content: "";
+  position: absolute; inset: -5px;
+  border: 1px solid var(--gold);
+  opacity: 0;
+  transform: scale(.5) rotate(45deg);
+  transition: opacity .4s ease, transform .45s cubic-bezier(.22,.8,.24,1);
+}
+.proof-signal:hover .proof-signal-node::after { opacity: .55; transform: scale(1) rotate(45deg); }
+.proof-signal-idx {
+  font: 600 9px/1 var(--font-geist-mono), monospace;
+  letter-spacing: 0.18em;
+  color: var(--gold-ink);
+}
+.proof-signal-word {
+  position: relative; display: inline-block;
+  font-size: 1.55rem; line-height: 1; color: var(--foreground);
+  transition: color .35s ease;
+}
+.proof-signal-word::after {
+  content: "";
+  position: absolute; left: 0; bottom: -0.3em;
+  width: 0; height: 1px; background: var(--gold);
+  transition: width .5s cubic-bezier(.22,.8,.24,1);
+}
+.proof-signal:hover .proof-signal-word { color: var(--gold-ink); }
+.proof-signal:hover .proof-signal-word::after { width: 100%; }
+.proof-signal-md .proof-signal-word { font-size: 1.75rem; }
+.proof-signal-lg .proof-signal-word { font-size: 2rem; }
+.proof-signal-sm .proof-signal-word { font-size: 1.3rem; }
+/* NOTE: .proof-signal.is-dropped carries no indent — the desktop stagger comes
+   from the inline --fall/--sx custom props under the ≥1024px absolute layout.
+   On the mobile spine every theme stays flush on the border-left line, with
+   its diamond node centered on it. */
+.proof-signal-note { max-width: var(--nw, 15rem); font-size: 12.5px; line-height: 1.55; color: var(--ink-soft); }
+.proof-signature {
+  display: flex; align-items: center; gap: 1.1rem;
+  margin: clamp(3.2rem, 8vh, 5rem) 0 0;
+  font: 600 11px/1.5 var(--font-geist-mono), monospace;
+  letter-spacing: 0.22em;
+  color: var(--gold-ink);
+}
+.proof-signature::before { content: ""; width: 3.2rem; height: 1px; background: currentColor; flex: none; }
+
+/* ---------- Reveal system (gated on data-proof-ready from JS) ---------- */
+.proof[data-proof-ready] .proof-reveal {
+  opacity: 0;
+  transform: translateY(26px);
+  transition:
+    opacity 0.85s cubic-bezier(0.22, 0.8, 0.24, 1) var(--pd, 0s),
+    transform 0.85s cubic-bezier(0.22, 0.8, 0.24, 1) var(--pd, 0s);
+}
+.proof[data-proof-ready] .proof-reveal.is-revealed { opacity: 1; transform: translateY(0); }
+.proof[data-proof-ready] .proof-line-reveal {
+  display: inline-block;
+  transform: translateY(112%);
+  transition: transform 0.95s cubic-bezier(0.19, 0.82, 0.22, 1) var(--pd, 0s);
+}
+.proof[data-proof-ready] .proof-line-reveal.is-revealed { transform: translateY(0); }
+
+/* Signal choreography: the stem draws down, the node lands on the spine,
+   the index fades in, the word rises, the note settles - evidence
+   appearing in sequence along the path. Gated on .is-revealed. */
+.proof[data-proof-ready] .proof-signal.proof-reveal { opacity: 1; transform: none; transition: none; }
+.proof[data-proof-ready] .proof-signal-stem {
+  transform: scaleY(0); transform-origin: top;
+  transition: transform 0.7s cubic-bezier(0.22, 0.8, 0.24, 1) var(--pd, 0s);
+}
+.proof[data-proof-ready] .proof-signal-node {
+  transform: rotate(45deg) scale(0);
+  transition: transform 0.4s cubic-bezier(0.22, 0.8, 0.24, 1) calc(var(--pd, 0s) + 0.12s);
+}
+.proof[data-proof-ready] .proof-signal-idx { opacity: 0; transition: opacity 0.5s ease calc(var(--pd, 0s) + 0.18s); }
+.proof[data-proof-ready] .proof-signal-word {
+  opacity: 0; transform: translateY(14px);
+  transition:
+    opacity 0.7s cubic-bezier(0.22, 0.8, 0.24, 1) calc(var(--pd, 0s) + 0.2s),
+    transform 0.7s cubic-bezier(0.22, 0.8, 0.24, 1) calc(var(--pd, 0s) + 0.2s);
+}
+.proof[data-proof-ready] .proof-signal-note {
+  opacity: 0; transform: translateY(10px);
+  transition:
+    opacity 0.7s cubic-bezier(0.22, 0.8, 0.24, 1) calc(var(--pd, 0s) + 0.34s),
+    transform 0.7s cubic-bezier(0.22, 0.8, 0.24, 1) calc(var(--pd, 0s) + 0.34s);
+}
+.proof[data-proof-ready] .proof-signal.is-revealed .proof-signal-stem { transform: scaleY(1); }
+.proof[data-proof-ready] .proof-signal.is-revealed .proof-signal-node { transform: rotate(45deg) scale(1); }
+.proof[data-proof-ready] .proof-signal.is-revealed .proof-signal-idx,
+.proof[data-proof-ready] .proof-signal.is-revealed .proof-signal-word,
+.proof[data-proof-ready] .proof-signal.is-revealed .proof-signal-note { opacity: 1; transform: none; }
+
+/* The thread itself draws across the field as the signals arrive;
+   a faint gold dotted echo settles in behind it. */
+.proof[data-proof-ready] .proof-signal-thread.proof-reveal { opacity: 1; transform: none; transition: none; }
+.proof[data-proof-ready] .proof-signal-thread-path {
+  stroke-dasharray: 1; stroke-dashoffset: 1;
+  transition: stroke-dashoffset 2.4s cubic-bezier(.22,.8,.24,1) .25s;
+}
+.proof[data-proof-ready] .proof-signal-thread.is-revealed .proof-signal-thread-path { stroke-dashoffset: 0; }
+.proof[data-proof-ready] .proof-signal-thread-echo { opacity: 0; transition: opacity 1.2s ease 1.8s; }
+.proof[data-proof-ready] .proof-signal-thread.is-revealed .proof-signal-thread-echo { opacity: .3; }
+
+/* Gcard choreography: the card settles onto the desk with a whisper of
+   rotation, then the five stars pop-fill in sequence - a rating being
+   earned in front of you, not merely displayed. */
+.proof[data-proof-ready] .proof-gcard { transform: translateY(26px) rotate(-0.9deg); }
+.proof[data-proof-ready] .proof-gcard.is-revealed { transform: none; }
+.proof[data-proof-ready] .proof-gcard .proof-gcard-stars .proof-gcard-star {
+  transform: scale(0) rotate(-36deg);
+  transition: transform 0.55s cubic-bezier(0.34, 1.56, 0.64, 1) calc(var(--pd, 0s) + 0.4s + var(--si, 0s));
+}
+.proof[data-proof-ready] .proof-gcard.is-revealed .proof-gcard-stars .proof-gcard-star { transform: none; }
+@media (hover: hover) and (pointer: fine) {
+  .proof[data-proof-ready] .proof-gcard.is-revealed:hover {
+    transform: translateY(-3px);
+    box-shadow:
+      0 2px 4px rgba(60, 64, 67, 0.3),
+      0 8px 20px 4px rgba(60, 64, 67, 0.16);
+    transition: transform 0.35s cubic-bezier(0.22, 0.8, 0.24, 1), box-shadow 0.35s cubic-bezier(0.22, 0.8, 0.24, 1);
+  }
+}
+
+
+/* Ghost word: soft visibility floor — never a missing layer, calmly
+   deepens to full once revealed. Sits after the reveal base so the
+   faded-gate can't erase it. */
+.proof[data-proof-ready] .proof-reputation-ghost {
+  opacity: 0.55;
+  transform: none;
+  transition: opacity 2.6s ease 0.05s;
+}
+.proof[data-proof-ready] .proof-reputation-ghost.is-revealed { opacity: 1; }
+/* ---------- Responsive art direction ---------- */
+/* Below the two-column desktop layout the video frame is centered, so the
+   backing plane peeks symmetrically on both sides — matching the phone
+   treatment. Desktop (≥1024px) restores its intentional left-shifted insets. */
+@media (max-width: 1023px) {
+  .proof-media-plane { left: -4%; right: -4%; }
+}
+@media (min-width: 768px) {
+  .proof { --proof-overlap: clamp(5.5rem, 13vh, 8.5rem); }
+  .proof-open { padding-bottom: clamp(7.5rem, 18vh, 10rem); }
+  .proof-intro { max-width: 38rem; font-size: 16px; }
+  .proof-frame { height: min(76vh, 720px); height: min(76svh, 720px); }
+  .proof-quote blockquote p { font-size: clamp(1.6rem, 2.4vw, 2.1rem); }
+}
+
+@media (min-width: 1024px) {
+  .proof { --proof-overlap: clamp(6rem, 13vh, 8.5rem); }
+  .proof-open { padding-bottom: clamp(9rem, 18vh, 11rem); }
+  .proof-grid { grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: clamp(3rem, 6vw, 6.5rem); }
+  .proof-media { order: 0; }
+  .proof-stage { padding-top: clamp(4rem, 15vh, 9.5rem); }
+  .proof-frame { height: min(88vh, 860px); height: min(88svh, 860px); max-width: none; margin-left: 0; }
+  .proof-media-plane { top: 5%; left: -7%; right: 11%; bottom: -4%; }
+  .proof-gcard { width: min(100%, 30rem); }
+  /* Signals: one hand-drawn thread curves through the evidence field;
+     each theme hangs from the point where its node lands on the thread. */
+  .proof-signal-canvas { position: relative; margin-top: 3.2rem; }
+  .proof-signal-path {
+    position: relative; display: block;
+    height: 21rem;
+    margin: 0;
+    padding: 0;
+    border-left: 0;
+  }
+  .proof-signal-thread {
+    display: block; position: absolute; inset: 0;
+    width: 100%; height: 100%; overflow: visible;
+  }
+  .proof-signal-thread-path,
+  .proof-signal-thread-echo { fill: none; stroke-width: 1px; }
+  .proof-signal-thread-path { stroke: var(--line); }
+  .proof-signal-thread-echo {
+    stroke: var(--gold);
+    stroke-dasharray: 2 7; stroke-linecap: round; opacity: .3;
+  }
+  /* Each theme hangs from its own stem at its own x and landing height:
+     no shared column starts, no repeated cells, no card boundaries. */
+  .proof-signal { position: absolute; left: var(--sx); top: calc(var(--cy) + var(--fall)); margin-left: 0; }
+  .proof-signal-stem {
+    display: block; position: absolute; left: 0;
+    top: calc(var(--fall) * -1); width: 1px; height: var(--fall);
+    background: var(--line);
+  }
+  .proof-signal-node { left: -4px; top: calc(var(--fall) * -1 - 4px); }
+  .proof-signal-word { font-size: clamp(1.3rem, 1.5vw, 1.7rem); }
+  .proof-signal-md .proof-signal-word { font-size: clamp(1.6rem, 1.9vw, 2.15rem); }
+  .proof-signal-lg .proof-signal-word { font-size: clamp(2rem, 2.4vw, 2.7rem); }
+}
+
+@media (min-width: 1280px) {
+  .proof { --proof-overlap: clamp(10rem, 20vh, 16rem); }
+  .proof-open { padding-bottom: clamp(8rem, 15vh, 10rem); }
+  .proof-intro { max-width: 33rem; }
+  .proof-frame { height: min(90vh, 900px); height: min(90svh, 900px); }
+  .proof-stage { padding-top: clamp(5rem, 17vh, 11rem); }
+  .proof-open-grid { grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.75fr); gap: clamp(2.5rem, 6vw, 5rem); align-items: center; }
+  .proof-open-card { justify-self: end; }
+  .proof-title { font-size: clamp(4.5rem, 6.6vw, 8.25rem); }
+  .proof-signal-path { height: 22rem; }
+  .proof-reputation { padding-top: clamp(5.5rem, 13vh, 8rem); }
+  .proof-reputation-ghost { font-size: clamp(13rem, 19vw, 23rem); right: -9%; }
+}
+
+@media (min-width: 1920px) {
+  .proof-shell { max-width: 1720px; }
+  .proof-reputation-ghost { font-size: 23rem; }
+  .proof-title { font-size: 9rem; }
+  .proof-frame { height: min(90vh, 980px); height: min(90svh, 980px); }
+}
+
+@media (max-width: 767px) {
+  .proof-reputation-ghost {
+    top: auto;
+    bottom: -2rem;
+    right: -20%;
+    font-size: clamp(6.5rem, 28vw, 9rem);
+  }
+}
+
+@media (max-width: 480px) {
+  .proof-index { font-size: 10px; padding: 0.4rem 0.5rem; }
+  .proof-eyebrow { font-size: 10px; letter-spacing: 0.16em; }
+  .proof-intro { font-size: 14.5px; }
+  .proof-frame { height: min(64vh, 480px); height: min(64svh, 480px); }
+  .proof-rail { gap: 0.3rem 1rem; }
+  .proof-rail-name { font-size: 9.5px; letter-spacing: 0.1em; }
+  .proof-rail-doctor { font-size: 1.05rem; }
+  .proof-frame-rail { padding: 1.3rem 0.9rem 0.85rem; }
+  .proof-frame-mat { top: -10px; left: -10px; }
+  .proof-tick { width: 13px; height: 13px; }
+  .proof-tick-tl, .proof-tick-tr { top: -6px; }
+  .proof-tick-bl, .proof-tick-br { bottom: -6px; }
+  .proof-tick-tl, .proof-tick-bl { left: -6px; }
+  .proof-tick-tr, .proof-tick-br { right: -6px; }
+  .proof-gcard { width: 100%; }
+  .proof-gcard-note { font-size: 13px; }
+  .proof-signal-note { font-size: 12px; }
+}
+
+/* ---------- Reduced motion: everything readable, nothing travels ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .proof[data-proof-ready] .proof-reveal,
+  .proof[data-proof-ready] .proof-line-reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .proof-media-plane { transform: none !important; }
+  .proof-tick { transition: none; }
+  .proof-media:hover .proof-tick-tl, .proof-media:hover .proof-tick-tr,
+  .proof-media:hover .proof-tick-bl, .proof-media:hover .proof-tick-br { transform: none; }
+  .proof-reputation-ghost { transform: none !important; transition: none !important; }
+  .proof-dot, .proof-rail-progress { animation: none; }
+  .proof-video { transition: none; }
+  .proof-quote, .proof-quote.is-active { transition: opacity 0.01s linear; transform: none; }
+  .proof-open-bloom, .proof-open-ring-a, .proof-open-ring-b,
+  .proof-open-contour-a, .proof-open-contour-b { animation: none; }
+  .proof[data-proof-ready] .proof-signal-stem,
+  .proof[data-proof-ready] .proof-signal-node { transform: none; transition: none; }
+  .proof[data-proof-ready] .proof-signal-node { transform: rotate(45deg); }
+  .proof[data-proof-ready] .proof-signal-idx,
+  .proof[data-proof-ready] .proof-signal-word,
+  .proof[data-proof-ready] .proof-signal-note { opacity: 1; transform: none; transition: none; }
+  /* Thread: fully drawn, echo present, hover states land instantly */
+  .proof[data-proof-ready] .proof-signal-thread-path { stroke-dashoffset: 0; transition: none; }
+  .proof[data-proof-ready] .proof-signal-thread-echo { opacity: .3; transition: none; }
+  .proof-signal-word,
+  .proof-signal-word::after,
+  .proof-signal-node::after { transition: none; }
+  /* Gcard: everything readable instantly, nothing travels or pulses */
+  .proof[data-proof-ready] .proof-gcard { transform: none; }
+  .proof[data-proof-ready] .proof-gcard .proof-gcard-stars .proof-gcard-star { transform: none; transition: none; }
+  .proof-gcard-review { animation: none; }
+  .proof-gcard-progress { display: none; }
+}
+
+
+
+
+
