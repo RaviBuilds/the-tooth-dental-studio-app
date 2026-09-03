@@ -2719,6 +2719,666 @@ a { color:inherit; text-decoration:none; }
   .diagnosis-end-link { transition: none; }
 }
 
+/* ================================================================
+   DOCTOR - SECTION 05 - THE DENTIST BEHIND THE CARE
+   ("The Practitioner's Portrait")
+   ----------------------------------------------------------------
+   An editorial profile spread on warm ivory, warmer than the
+   clinical Section 04: a transparent portrait CUT-OUT (photo 02's
+   native alpha mounted on the ivory like a print - a portrait
+   OBJECT, never a second hero), the name as the dominant serif,
+   a numbered approach index (LISTEN / EXPLAIN / FOLLOW UP) as one
+   row of three movements, verified patient sentiment as a quiet
+   annotation under the portrait (no counters - deliberately unlike
+   the approach index), one staggered 4-up band of real patient
+   moments, and a compact case strip as closing evidence. Distinct
+   from Section 01 (kinetic cover), 02 (the bridge), 03 (dark
+   typographic atlas) and 04 (journal plates).
+   Reveal gating via .doctor[data-doctor-ready] from Doctor.tsx,
+   so all content stays fully visible without JS.
+   All motion is transform/opacity/clip-path only. Reduced
+   motion: calm.
+   ================================================================ */
+.doctor {
+  /* Ink-gold for ivory ground (AA-contrast gold; matches Proof/Diagnosis ink). */
+  --dt-gold: #6f5a26;
+  --dt-gold-line: rgba(197, 164, 91, 0.55);
+  position: relative;
+  overflow: clip;
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), Arial, sans-serif;
+  border-top: 1px solid var(--line);
+  background:
+    radial-gradient(75% 55% at 6% 2%, rgba(197, 164, 91, 0.08), transparent 55%),
+    var(--background);
+  padding: clamp(3.5rem, 8vh, 5rem) 0 clamp(2.75rem, 7vh, 4.25rem);
+}
+.doctor-shell {
+  max-width: 1480px;
+  margin-inline: auto;
+  padding-inline: clamp(1.25rem, 4vw, 4rem);
+}
+
+/* ---------- The spread: head / portrait / story / moments / work.
+   Mobile-first single column; areas are assigned at >=768 and >=1024. */
+.doctor-spread {
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: clamp(2.4rem, 6vh, 3.2rem);
+  align-items: start;
+}
+.doctor-head {}
+.doctor-portrait {}
+.doctor-story {}
+.doctor-moments {}
+.doctor-work {}
+
+/* ---------- Chapter head ---------- */
+.doctor-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  color: var(--dt-gold);
+}
+.doctor-eyebrow-rule {
+  width: 2.5rem;
+  height: 1px;
+  background: var(--dt-gold);
+  flex: none;
+}
+.doctor-title {
+  margin: clamp(1rem, 2.4vh, 1.6rem) 0 0;
+  font-size: clamp(2.5rem, 4.9vw, 4.6rem);
+  color: var(--foreground);
+}
+.doctor-cred {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 1.6rem;
+  margin: clamp(1rem, 2.2vh, 1.4rem) 0 0;
+  font: 600 10.5px/1.6 var(--font-geist-mono), monospace;
+  letter-spacing: 0.18em;
+  color: var(--muted);
+}
+.doctor-cred--lang {
+  margin-top: 0.55rem;
+}
+.doctor-cred--lang::before {
+  content: "";
+  width: 1.6rem;
+  height: 1px;
+  background: var(--dt-gold);
+  align-self: center;
+  flex: none;
+}
+.doctor-intro {
+  margin: clamp(1rem, 2.4vh, 1.5rem) 0 0;
+  max-width: 36rem;
+  font-size: 15.5px;
+  line-height: 1.8;
+  color: var(--muted);
+}
+
+/* ---------- Reveal system (JS-gated, no-JS safe) ---------- */
+.doctor[data-doctor-ready] .doctor-reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 0.85s cubic-bezier(0.19, 0.82, 0.22, 1) var(--d, 0s),
+    transform 0.85s cubic-bezier(0.19, 0.82, 0.22, 1) var(--d, 0s);
+}
+.doctor[data-doctor-ready] .doctor-reveal.is-revealed {
+  opacity: 1;
+  transform: none;
+}
+
+/* ---------- The portrait: a transparent cut-out, mounted like a print.
+   The photograph's native alpha IS the design - no fake backdrop plate
+   and never a recrop. The subject floats over an offset hairline frame
+   and a quiet tonal wash, seated by a soft contact shadow, under a
+   gold rule: a print mounted on the ivory page. */
+.doctor-portrait {
+  position: relative;
+  margin: 0;
+}
+.doctor-portrait-plate {
+  position: relative;
+  display: block;
+  width: 100%;
+  max-width: 470px;
+  margin-inline: auto;
+  /* No top padding: the photograph is a tight crop - the subject touches the top and bottom edges of its own canvas. Those baked-in cut edges are anchored ON the two horizontal rules: the head sits on the gold rule above, the torso on the caption rule below. */
+  padding: 0;
+  border-top: 1px solid var(--dt-gold);
+}
+.doctor-portrait-plate::before {
+  content: "";
+  position: absolute;
+  top: clamp(1.5rem, 2.8vw, 2.2rem);
+  right: calc(-1 * clamp(0.5rem, 1.2vw, 1rem));
+  width: min(84%, 396px);
+  height: 74%;
+  border: 1px solid var(--line);
+  background: linear-gradient(172deg, var(--surface), rgba(235, 229, 218, 0));
+  z-index: 0;
+}
+.doctor-portrait-img {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 680 / 383; /* the crop's native ratio - never recropped */
+  object-fit: contain;
+  filter: drop-shadow(0 24px 20px rgba(29, 33, 31, 0.2));
+}
+.doctor-portrait-caption {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  max-width: 470px;
+  margin: 0 auto; /* sits directly on the image bottom edge - no gap */
+  padding-top: 0.6rem;
+  border-top: 1px solid var(--line);
+  font: 500 9.5px/1.6 var(--font-geist-mono), monospace;
+  letter-spacing: 0.16em;
+}
+.doctor-portrait-caption span:first-child { color: var(--foreground); }
+.doctor-portrait-caption span:last-child { color: var(--muted); }
+
+/* The mount settles with a masked wipe on reveal (the section's one
+   signature motion - everything else simply arrives). */
+.doctor[data-doctor-ready] .doctor-portrait .doctor-portrait-plate {
+  clip-path: inset(0 0 100% 0);
+  transition: clip-path 1s cubic-bezier(0.19, 0.82, 0.22, 1) 0.1s;
+}
+.doctor[data-doctor-ready] .doctor-portrait.is-revealed .doctor-portrait-plate {
+  clip-path: inset(0 0 0% 0);
+}
+
+
+/* ---------- His approach: numbered editorial index ---------- */
+.doctor-approach { margin-top: 0; }
+.doctor-step {
+  display: grid;
+  grid-template-columns: 2.7rem minmax(0, 1fr);
+  column-gap: 0.6rem;
+  padding: clamp(1rem, 2vh, 1.35rem) 0;
+  border-top: 1px solid var(--line);
+}
+.doctor-step-num {
+  grid-column: 1;
+  grid-row: 1;
+  font: 600 10.5px/2.2 var(--font-geist-mono), monospace;
+  letter-spacing: 0.18em;
+  color: var(--dt-gold);
+}
+.doctor-step-word {
+  grid-column: 2;
+  grid-row: 1;
+  margin: 0;
+  font-size: clamp(1.55rem, 2.2vw, 2.05rem);
+  letter-spacing: -0.02em;
+  color: var(--foreground);
+}
+.doctor-step-gloss {
+  grid-column: 2;
+  grid-row: 2;
+  margin: 0.35rem 0 0;
+  font-size: 13.5px;
+  line-height: 1.65;
+  color: var(--muted);
+}
+
+/* ---------- From tablet up the three movements read as ONE row:
+   number, word and gloss stack inside each cell; a shared hairline
+   above each cell keeps the index rhythm without the vertical run. */
+@media (min-width: 768px) {
+  .doctor-approach {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    column-gap: clamp(1.1rem, 2.2vw, 1.8rem);
+  }
+  .doctor-step {
+    display: block;
+    padding: 0.95rem 0 0;
+  }
+  .doctor-step-num { display: block; line-height: 1; }
+  .doctor-step-word { display: block; }
+  .doctor-step-gloss { margin-top: 0.4rem; }
+}
+
+/* ---------- Personal statement + close ---------- */
+.doctor-quote {
+  margin: clamp(1.4rem, 3vh, 2rem) 0 0;
+  padding-left: clamp(1.2rem, 2.5vw, 1.8rem);
+  border-left: 1px solid var(--dt-gold-line);
+}
+.doctor-quote p {
+  margin: 0;
+  font-family: var(--font-cormorant), Georgia, serif;
+  font-style: italic;
+  font-weight: 500;
+  font-size: clamp(1.35rem, 1.9vw, 1.7rem);
+  line-height: 1.32;
+  letter-spacing: -0.01em;
+  color: var(--foreground);
+}
+.doctor-quote cite {
+  display: block;
+  margin-top: 0.7rem;
+  font: 600 10px/1.6 var(--font-geist-mono), monospace;
+  font-style: normal;
+  letter-spacing: 0.18em;
+  color: var(--muted);
+}
+.doctor-close { margin: clamp(1.4rem, 3vh, 1.75rem) 0 0; }
+.doctor-close-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font: 600 12px/1 var(--font-geist-mono), monospace;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--dt-gold);
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--dt-gold-line);
+  transition: transform 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+.doctor-close-link:hover {
+  transform: translateX(4px);
+  border-color: var(--dt-gold);
+}
+
+/* ---------- What patients remember: a quiet margin annotation.
+   Deliberately NOT a second numbered index (the approach is the
+   numbered one): no counters, no hairline rows - an italic gold
+   serif word and its gloss sharing one calm baseline. The moments
+   are a bounded photographic strip on mobile; from tablet up one
+   staggered 4-up band. */
+.doctor-moments { position: relative; z-index: 2; }
+.doctor-remember-head {
+  margin: 0;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid var(--line);
+  font: 600 10px/1.5 var(--font-geist-mono), monospace;
+  letter-spacing: 0.18em;
+  color: var(--foreground);
+}
+.doctor-remember-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.doctor-remember-list li {
+  padding: 0.6rem 0;
+}
+.doctor-remember-word {
+  display: block;
+  font-family: var(--font-cormorant), Georgia, serif;
+  font-style: italic;
+  font-weight: 500;
+  font-size: clamp(1.35rem, 1.6vw, 1.55rem);
+  letter-spacing: 0.01em;
+  color: var(--dt-gold);
+}
+.doctor-remember-gloss {
+  display: block;
+  margin-top: 0.15rem;
+  font-size: 12.5px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+/* From 480 up: word and gloss on ONE baseline - an annotation,
+   not a list. */
+@media (min-width: 480px) {
+  .doctor-remember-list li {
+    display: grid;
+    grid-template-columns: minmax(7rem, auto) minmax(0, 1fr);
+    column-gap: 1rem;
+    align-items: baseline;
+  }
+  .doctor-remember-gloss { margin-top: 0; }
+}
+
+
+/* Patient moments - a bounded internal strip on mobile (swipes only);
+   from tablet up, a composed 2x2 grid so every photograph and caption
+   gets real width. Faces are never overlapped or cropped away. */
+.doctor-moment-cluster { min-width: 0; }
+.doctor-moment-head {
+  margin: 1.5rem 0 0;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid var(--line);
+  font: 600 10px/1.5 var(--font-geist-mono), monospace;
+  letter-spacing: 0.18em;
+  color: var(--foreground);
+}
+.doctor-moment-row {
+  display: flex;
+  align-items: flex-start;
+  gap: clamp(0.8rem, 2vw, 1.2rem);
+  margin-top: 1rem;
+  padding-bottom: 0.4rem;
+  overflow-x: auto; /* mobile: internal snap rail only */
+  max-width: 100%;
+  scroll-snap-type: x proximity;
+}
+.doctor-moment {
+  margin: 0;
+  flex: none;
+  scroll-snap-align: start;
+}
+.doctor-moment--a { width: 46vw; }
+.doctor-moment--b { width: 38vw; margin-top: 1.6rem; }
+.doctor-moment--c { width: 33vw; }
+.doctor-moment--d { width: 34vw; margin-top: 2.2rem; }
+.doctor-moment-frame {
+  position: relative;
+  display: block;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  background: linear-gradient(170deg, #232725 0%, #161917 100%);
+}
+.doctor-moment--c .doctor-moment-frame,
+.doctor-moment--d .doctor-moment-frame {
+  aspect-ratio: 3 / 4;
+}
+.doctor-moment-frame img {
+  object-fit: cover;
+  object-position: 50% 25%; /* keep faces in frame */
+}
+.doctor-moment-caption {
+  margin-top: 0.55rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+.doctor-moment-quote {
+  font-family: var(--font-cormorant), Georgia, serif;
+  font-weight: 500;
+  font-size: 1.02rem;
+  line-height: 1.35;
+  color: var(--foreground);
+}
+.doctor-moment-meta {
+  font: 500 9.5px/1.65 var(--font-geist-mono), monospace;
+  letter-spacing: 0.16em;
+  color: var(--muted);
+}
+
+/* ---------- The work: the complete case archive, one editorial rail.
+   All 8 records; object-fit CONTAIN on a clinical mat so no part of
+   any before/after record is ever cropped. Movement is a native
+   scroll container (wheel / trackpad / touch) + mouse drag + arrow
+   keys; progress is a scroll-synced 01/08 readout with eight steps. */
+.doctor-work-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.4rem 1rem;
+  margin: 0 0 clamp(1.1rem, 2.5vh, 1.6rem);
+  padding-bottom: 0.7rem;
+  border-bottom: 1px solid var(--line);
+  font: 600 10px/1.5 var(--font-geist-mono), monospace;
+  letter-spacing: 0.18em;
+  color: var(--foreground);
+}
+.doctor-work-sub {
+  color: var(--muted);
+  font-weight: 500;
+}
+.doctor-work-rail {
+  position: relative; /* card offsetLeft is measured against the rail */
+  display: flex;
+  gap: clamp(0.9rem, 2vw, 1.4rem);
+  overflow-x: auto;
+  max-width: 100%;
+  padding-bottom: 0.5rem;
+  scroll-snap-type: x proximity;
+  cursor: grab;
+}
+.doctor-work-rail:active { cursor: grabbing; }
+.doctor-case {
+  margin: 0;
+  flex: none;
+  width: clamp(190px, 18vw, 232px);
+  scroll-snap-align: center;
+}
+.doctor-case-frame {
+  position: relative;
+  display: block;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  background: linear-gradient(180deg, #f6f2ea 0%, #ece5d7 100%); /* clinical mat */
+  border: 1px solid rgba(29, 33, 31, 0.14);
+  transition: border-color 0.3s ease;
+}
+.doctor-case:hover .doctor-case-frame {
+  border-color: var(--dt-gold-line);
+}
+.doctor-case-frame img {
+  object-fit: contain; /* the record in full - never cropped, never stretched */
+}
+.doctor-case-caption {
+  margin-top: 0.55rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  font: 600 9.5px/1.6 var(--font-geist-mono), monospace;
+  letter-spacing: 0.16em;
+}
+.doctor-case-caption span:first-child { color: var(--foreground); }
+.doctor-case-caption span:last-child { color: var(--muted); }
+.doctor-work-foot {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.8rem 1.5rem;
+  margin-top: 0.4rem;
+}
+.doctor-work-note {
+  margin: 0;
+  padding-left: 1rem;
+  border-left: 1px solid var(--dt-gold-line);
+  font-family: var(--font-cormorant), Georgia, serif;
+  font-weight: 500;
+  font-size: clamp(1.2rem, 1.7vw, 1.5rem);
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+  color: var(--foreground);
+}
+.doctor-work-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+}
+.doctor-work-arrow {
+  width: 2.4rem;
+  height: 2.4rem;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: transparent;
+  color: var(--foreground);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.95rem;
+  line-height: 1;
+  cursor: pointer;
+  transition:
+    border-color 0.25s ease,
+    color 0.25s ease,
+    opacity 0.25s ease;
+}
+.doctor-work-arrow:hover:not(:disabled) {
+  border-color: var(--dt-gold);
+  color: var(--dt-gold);
+}
+.doctor-work-arrow:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+.doctor-work-progress {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+}
+.doctor-work-segments {
+  display: flex;
+  gap: 0.3rem;
+}
+.doctor-work-seg {
+  display: inline-flex;
+  padding: 0.5rem 0.1rem;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+}
+.doctor-work-seg-bar {
+  display: block;
+  width: 1.35rem;
+  height: 2px;
+  background: rgba(29, 33, 31, 0.16);
+  transition: background 0.25s ease;
+}
+.doctor-work-seg:hover .doctor-work-seg-bar {
+  background: rgba(111, 90, 38, 0.55);
+}
+.doctor-work-seg.is-active .doctor-work-seg-bar {
+  background: var(--dt-gold);
+}
+.doctor-work-count {
+  margin: 0;
+  min-width: 4ch;
+  font: 600 10.5px/1 var(--font-geist-mono), monospace;
+  letter-spacing: 0.18em;
+  font-variant-numeric: tabular-nums;
+  color: var(--foreground);
+}
+
+/* ---------- Mobile (<768): vertical human narrative.
+   The portrait tucks under the name block - a layered profile,
+   never a giant portrait competing with the Hero. */
+.doctor-title {
+  position: relative;
+  z-index: 2;
+}
+.doctor-portrait-plate {
+  width: min(82%, 330px);
+  margin-inline: 0;
+}
+.doctor-portrait-caption {
+  max-width: min(82%, 330px);
+  margin-inline: 0;
+}
+.doctor-portrait {
+  margin-top: clamp(-2.25rem, -6vw, -1.25rem);
+}
+
+/* ---------- Tablet (>=768): hybrid composition ---------- */
+@media (min-width: 768px) {
+  .doctor-spread {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    column-gap: clamp(2rem, 5vw, 3.5rem);
+    row-gap: clamp(2rem, 4.5vh, 2.8rem);
+    grid-template-areas:
+      "head head"
+      "portrait story"
+      "remember remember"
+      "moments moments"
+      "work work";
+  }
+  .doctor-head { grid-area: head; }
+  .doctor-portrait { grid-area: portrait; }
+  .doctor-story { grid-area: story; }
+  .doctor-remember { grid-area: remember; max-width: 46rem; }
+  .doctor-moments { grid-area: moments; }
+  .doctor-work { grid-area: work; }
+  .doctor-portrait-plate,
+  .doctor-portrait-caption {
+    width: 100%;
+    max-width: none;
+    margin-inline: 0;
+  }
+  .doctor-portrait { margin-top: 0; }
+  /* The mobile rail becomes one staggered 4-up contact-sheet band:
+     real width for every photograph, captions that never collide,
+     a quiet ragged rhythm from the offset baselines. */
+  .doctor-moment-row {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: clamp(0.9rem, 2vw, 1.4rem);
+    overflow: visible;
+    margin-top: 1.25rem;
+  }
+  .doctor-moment--a,
+  .doctor-moment--b,
+  .doctor-moment--c,
+  .doctor-moment--d { width: auto; }
+  .doctor-moment--b { margin-top: 1.1rem; }
+  .doctor-moment--d { margin-top: 1.7rem; }
+
+  .doctor-case { width: clamp(200px, 24vw, 246px); }
+}
+
+/* ---------- Desktop (>=1024): the full editorial spread ---------- */
+@media (min-width: 1024px) {
+  .doctor-spread {
+    grid-template-columns: minmax(0, 6.4fr) minmax(0, 5.1fr);
+    column-gap: clamp(2.6rem, 5.5vw, 5.5rem);
+    row-gap: clamp(2rem, 4.5vh, 3rem);
+    grid-template-areas:
+      "head portrait"
+      "story remember"
+      "moments moments"
+      "work work";
+  }
+  .doctor-head { grid-area: head; }
+  .doctor-portrait { grid-area: portrait; }
+  .doctor-story { grid-area: story; }
+  .doctor-remember { grid-area: remember; max-width: none; }
+  .doctor-moments { grid-area: moments; }
+  .doctor-work { grid-area: work; }
+  /* The portrait mount sits right with the memory annotation directly
+     beneath it; the approach row + statement + close fill the left
+     column at the same depth - no dead white under the close. The
+     moment band and the case rail then run full width. */
+  .doctor-portrait-plate,
+  .doctor-portrait-caption {
+    max-width: 470px;
+    margin-left: auto;
+    margin-right: 0;
+  }
+}
+@media (min-width: 1440px) {
+  .doctor-title { font-size: 5rem; }
+}
+@media (min-width: 1920px) {
+  .doctor-shell { max-width: 1560px; }
+  .doctor-title { font-size: 5.4rem; }
+}
+
+/* ---------- Reduced motion: everything readable, nothing travels ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .doctor[data-doctor-ready] .doctor-reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .doctor[data-doctor-ready] .doctor-portrait .doctor-portrait-plate {
+    clip-path: none;
+    transition: none;
+  }
+  .doctor-close-link,
+  .doctor-case-frame,
+  .doctor-work-arrow,
+  .doctor-work-seg-bar { transition: none; }
+  .doctor-work-rail { scroll-behavior: auto; }
+}
+
 
 
 
