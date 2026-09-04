@@ -7,9 +7,14 @@
    question: "WHO WILL TREAT ME, AND WHY DO PATIENTS TRUST HIM?" -
    as an editorial profile spread, not a second doctor hero, not a
    doctor-directory card, not another review system. Its own identity:
-   a transparent portrait CUT-OUT (photo 02's native alpha, mounted on the ivory like a print), a numbered approach index and
-    verified patient sentiment as margin annotations beside two real
-   patient moments (deliberately distinct from the Hero's cover,
+   a transparent portrait CUT-OUT (photo 02's native alpha, mounted
+   on the ivory like a print) floating over the chapter's ghost
+   identity word DOCTOR and the print ground field (ruled
+   mount-board baselines, registration crosses, corner trim marks),
+   a numbered approach index and verified patient sentiment as
+   margin annotations, above one band of four real patient moments
+   mounted as snapshot prints (deliberately distinct from the
+   Hero's cover,
    Proof's bridge, the Atlas's dark index and Diagnosis's journal
    plates).
 
@@ -38,9 +43,10 @@
    Imagery:
    - Doctor photo 02 (native transparent background) - mounted as a
       cut-out print; visually subordinate to the Hero portrait (01).
-    - Happy Patient 01 + 03 only - the two photographs in which
-     Dr. Imran's presence is confirmable. 02/04 excluded (clinician
-     identity not confirmable behind masks/PPE).
+    - Happy Patient 01-04, all four: 01 + 03 show Dr. Imran with
+     patients (attributed); 02/04 stay unattributed (clinician
+     identity not confirmable behind masks/PPE). Mounted as snapshot
+     prints into the chapter's paper field.
    - Before/after 01 + 02 only - already-combined stacked records;
      03 excluded (baked-in text). No comparison interaction.
 
@@ -53,10 +59,16 @@
    - "What patients remember" is a separate quiet annotation (no
      counters, no rules - deliberately unlike the numbered approach
      index) and sits under the portrait on desktop.
-   - Mobile: vertical human narrative; patient moments become a
-     horizontal snap rail (internal scroll only); from tablet up
-     they form one staggered 4-up band; the case strip is a rail.
-     No horizontal page overflow.
+   - Mobile: vertical human narrative; patient moments stack as a
+     centred vertical column of prints (every photograph fully
+     visible, no horizontal scrolling, margin-inline: auto - not
+     alternating left/right); from tablet up they form one staggered
+     4-up band; the case strip is a rail with visible, tappable
+     controls (arrows/counter fixed, the eight segment dots scroll in
+     their own bounded track so the row never exceeds the viewport).
+     No horizontal page overflow. The spread's own grid column is
+     minmax(0, 1fr) on mobile, not a bare 1fr, so the rail's min-
+     content never inflates the whole column past the viewport.
    - All motion is transform/opacity/clip-path only.
      Reduced motion: calm, everything readable.
    ================================================================== */
@@ -72,7 +84,7 @@ import type {
 import Image from "next/image";
 
 const PORTRAIT_SRC =
-  "/images/Dr photo/dr-mohammed-imran-ali-tooth-dental-studio-hyderabad-02.png";
+  "/images/Dr photo/dr-mohammed-imran-ali-tooth-dental-studio-hyderabad-02-tight.png";
 
 const HAPPY_BASE =
   "/images/Happy Patient/dr-mohammed-imran-ali-happy-patient-tooth-dental-studio-hyderabad";
@@ -93,7 +105,10 @@ const APPROACH = [
 const REMEMBER = [
   { word: "CALM", gloss: "A calm and friendly manner." },
   { word: "CLEAR", gloss: "Careful explanations before care begins." },
-  { word: "PERSONAL", gloss: "Personal attention throughout the dental journey." },
+  {
+    word: "PERSONAL",
+    gloss: "Personal attention throughout the dental journey.",
+  },
 ];
 
 /* THE WORK - the complete clinical case library. All EIGHT before/after
@@ -171,7 +186,7 @@ export function Doctor() {
           }
         }
       },
-      { threshold: 0.08, rootMargin: "0px 0px 0% 0px" }
+      { threshold: 0.08, rootMargin: "0px 0px 0% 0px" },
     );
     section.querySelectorAll(".doctor-reveal").forEach((el) => io.observe(el));
     return () => io.disconnect();
@@ -191,7 +206,9 @@ export function Doctor() {
     if (!rail) return;
     const card = rail.querySelectorAll<HTMLElement>(".doctor-case")[n - 1];
     if (!card) return;
-    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const reduced = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
     rail.scrollTo({
       left: card.offsetLeft - (rail.clientWidth - card.offsetWidth) / 2,
       behavior: reduced ? "auto" : "smooth",
@@ -238,18 +255,24 @@ export function Doctor() {
     if (e.pointerType !== "mouse") return; // touch / pen use native scrolling
     const rail = railRef.current;
     if (!rail) return;
-    dragRef.current = { down: true, startX: e.clientX, startLeft: rail.scrollLeft };
+    dragRef.current = {
+      down: true,
+      startX: e.clientX,
+      startLeft: rail.scrollLeft,
+    };
     rail.setPointerCapture(e.pointerId);
   };
   const onRailPointerMove = (e: ReactPointerEvent<HTMLDivElement>) => {
     const rail = railRef.current;
     if (!rail || !dragRef.current.down) return;
-    rail.scrollLeft = dragRef.current.startLeft - (e.clientX - dragRef.current.startX);
+    rail.scrollLeft =
+      dragRef.current.startLeft - (e.clientX - dragRef.current.startX);
   };
   const onRailPointerEnd = (e: ReactPointerEvent<HTMLDivElement>) => {
     const rail = railRef.current;
     dragRef.current.down = false;
-    if (rail?.hasPointerCapture(e.pointerId)) rail.releasePointerCapture(e.pointerId);
+    if (rail?.hasPointerCapture(e.pointerId))
+      rail.releasePointerCapture(e.pointerId);
   };
   const onRailKeyDown = (e: ReactKeyboardEvent<HTMLDivElement>) => {
     if (e.key === "ArrowRight") {
@@ -269,6 +292,55 @@ export function Doctor() {
       className="doctor"
       aria-labelledby="doctor-title"
     >
+      {/* Print field - the spread's ground identity: ruled mount-board
+          baselines, page margins, gold registration crosses and corner
+          trim marks - the profile sheet on the print table. Marginal
+          geometry only: it never reads over the photographs. */}
+      <svg
+        className="doctor-field"
+        viewBox="0 0 1200 900"
+        preserveAspectRatio="xMidYMid slice"
+        aria-hidden="true"
+        focusable="false"
+      >
+        {[200, 320, 440, 560, 680].map((y) => (
+          <line key={y} x1="0" y1={y} x2="1200" y2={y} />
+        ))}
+        <line x1="80" y1="0" x2="80" y2="900" />
+        <line x1="1120" y1="0" x2="1120" y2="900" />
+        {[
+          [80, 320],
+          [1120, 200],
+          [80, 680],
+          [1120, 560],
+        ].map(([x, y]) => (
+          <g key={`${x}-${y}`} className="doctor-field-cross">
+            <line x1={x - 9} y1={y} x2={x + 9} y2={y} />
+            <line x1={x} y1={y - 9} x2={x} y2={y + 9} />
+          </g>
+        ))}
+        {[
+          [36, 36],
+          [1164, 36],
+          [36, 864],
+          [1164, 864],
+        ].map(([x, y]) => (
+          <g key={`trim-${x}-${y}`} className="doctor-field-trim">
+            <line x1={x - 14} y1={y} x2={x + 14} y2={y} />
+            <line x1={x} y1={y - 14} x2={x} y2={y + 14} />
+          </g>
+        ))}
+      </svg>
+
+      {/* Section ghost identity word - the site-wide convention
+          (REPUTATION / CARE / SEE): one oversized, very low-contrast
+          serif word naming the chapter. This chapter's word: DOCTOR.
+          Static, aria-hidden, never interactive, painted under the
+          cut-out portrait, which sits over it like a mounted print. */}
+      <span className="doctor-ghost display" aria-hidden="true">
+        DOCTOR
+      </span>
+
       <div className="doctor-shell">
         <div className="doctor-spread">
           {/* ---------- Chapter head: who he is ---------- */}
@@ -303,13 +375,15 @@ export function Doctor() {
             </p>
           </header>
 
-          {/* ---------- The portrait: a transparent cut-out, mounted like a print ---------- */}<figure className="doctor-portrait doctor-reveal">
+          {/* ---------- The portrait: a transparent cut-out, mounted like a print ---------- */}
+          <figure className="doctor-portrait doctor-reveal">
             <span className="doctor-portrait-plate">
               <Image
                 className="doctor-portrait-img"
                 src={PORTRAIT_SRC}
                 alt="Dr. Mohammed Imran Ali, general dentist at The Tooth Dental Studio in Tolichowki, Hyderabad"
-                width={680} height={383}
+                width={483}
+                height={383}
                 sizes="(max-width: 767px) 82vw, (max-width: 1023px) 44vw, 470px"
                 quality={85}
                 loading="lazy"
@@ -371,7 +445,9 @@ export function Doctor() {
             </ul>
           </div>
 
-          {/* ---------- Patient moments: one staggered 4-up band ---------- */}
+          {/* ---------- Patient moments: four snapshot prints mounted
+             into the paper field - staggered, micro-tilted, numbered
+             01-04, corner-trimmed (see globals.css). ---------- */}
           <div className="doctor-moments">
             <div className="doctor-moment-cluster">
               <p className="doctor-moment-head doctor-reveal">
@@ -385,15 +461,22 @@ export function Doctor() {
                     style={delay(`${(i * 0.08).toFixed(2)}s`)}
                   >
                     <span className="doctor-moment-frame">
-                      <Image
-                        src={m.src}
-                        alt={m.alt}
-                        fill
-                        sizes="(max-width: 767px) 46vw, 23vw"
-                        quality={85}
-                        loading="lazy"
-                        decoding="async"
-                      />
+                      <span
+                        className="doctor-moment-num"
+                        aria-hidden="true"
+                      >{`0${i + 1}`}</span>
+                      <span className="doctor-moment-tick" aria-hidden="true" />
+                      <span className="doctor-moment-window">
+                        <Image
+                          src={m.src}
+                          alt={m.alt}
+                          fill
+                          sizes="(max-width: 767px) 88vw, 19vw"
+                          quality={85}
+                          loading="lazy"
+                          decoding="async"
+                        />
+                      </span>
                     </span>
                     <figcaption className="doctor-moment-caption">
                       {m.quote ? (
@@ -435,80 +518,80 @@ export function Doctor() {
                   className="doctor-case doctor-reveal"
                   style={delay(`${(i * 0.06).toFixed(2)}s`)}
                 >
-                    <span className="doctor-case-frame">
-                      <Image
-                        src={c.src}
-                        alt={c.alt}
-                        fill
-                        sizes="(max-width: 767px) 62vw, (max-width: 1023px) 30vw, 246px"
-                        quality={85}
-                        loading="lazy"
-                        decoding="async"
-                      />
-                    </span>
-                    <figcaption className="doctor-case-caption">
-                      <span>{`CASE ${c.num}`}</span>
-                      <span>BEFORE / AFTER · CLINICAL CASE</span>
-                    </figcaption>
-                  </figure>
-                ))}
-              </div>
-              <div className="doctor-work-foot doctor-reveal">
-                <p className="doctor-work-note">
-                  Real clinic. Real dentistry. Real patient care.
-                </p>
-                <div className="doctor-work-controls">
-                  <button
-                    type="button"
-                    className="doctor-work-arrow focus-ring"
-                    aria-label="Previous case"
-                    disabled={activeCase === 1}
-                    onClick={() => stepCase(-1)}
+                  <span className="doctor-case-frame">
+                    <Image
+                      src={c.src}
+                      alt={c.alt}
+                      fill
+                      sizes="(max-width: 767px) 62vw, (max-width: 1023px) 30vw, 246px"
+                      quality={85}
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </span>
+                  <figcaption className="doctor-case-caption">
+                    <span>{`CASE ${c.num}`}</span>
+                    <span>BEFORE / AFTER · CLINICAL CASE</span>
+                  </figcaption>
+                </figure>
+              ))}
+            </div>
+            <div className="doctor-work-foot doctor-reveal">
+              <p className="doctor-work-note">
+                Real clinic. Real dentistry. Real patient care.
+              </p>
+              <div className="doctor-work-controls">
+                <button
+                  type="button"
+                  className="doctor-work-arrow focus-ring"
+                  aria-label="Previous case"
+                  disabled={activeCase === 1}
+                  onClick={() => stepCase(-1)}
+                >
+                  ←
+                </button>
+                <div className="doctor-work-progress">
+                  <div
+                    className="doctor-work-segments"
+                    role="group"
+                    aria-label="Go to a specific case"
                   >
-                    ←
-                  </button>
-                  <div className="doctor-work-progress">
-                    <div
-                      className="doctor-work-segments"
-                      role="group"
-                      aria-label="Go to a specific case"
-                    >
-                      {CASES.map((c) => (
-                        <button
-                          key={c.num}
-                          type="button"
-                          className={`doctor-work-seg focus-ring${
-                            activeCase === Number(c.num) ? " is-active" : ""
-                          }`}
-                          aria-label={`View case ${c.num}`}
-                          aria-current={
-                            activeCase === Number(c.num) || undefined
-                          }
-                          onClick={() => goToCase(Number(c.num))}
-                        >
-                          <span className="doctor-work-seg-bar" aria-hidden="true" />
-                        </button>
-                      ))}
-                    </div>
-                    <p className="doctor-work-count" aria-live="polite">
-                      {`0${activeCase} / 08`}
-                    </p>
+                    {CASES.map((c) => (
+                      <button
+                        key={c.num}
+                        type="button"
+                        className={`doctor-work-seg focus-ring${
+                          activeCase === Number(c.num) ? " is-active" : ""
+                        }`}
+                        aria-label={`View case ${c.num}`}
+                        aria-current={activeCase === Number(c.num) || undefined}
+                        onClick={() => goToCase(Number(c.num))}
+                      >
+                        <span
+                          className="doctor-work-seg-bar"
+                          aria-hidden="true"
+                        />
+                      </button>
+                    ))}
                   </div>
-                  <button
-                    type="button"
-                    className="doctor-work-arrow focus-ring"
-                    aria-label="Next case"
-                    disabled={activeCase === CASES.length}
-                    onClick={() => stepCase(1)}
-                  >
-                    →
-                  </button>
+                  <p className="doctor-work-count" aria-live="polite">
+                    {`0${activeCase} / 08`}
+                  </p>
                 </div>
+                <button
+                  type="button"
+                  className="doctor-work-arrow focus-ring"
+                  aria-label="Next case"
+                  disabled={activeCase === CASES.length}
+                  onClick={() => stepCase(1)}
+                >
+                  →
+                </button>
               </div>
+            </div>
           </div>
         </div>
       </div>
     </section>
   );
 }
-
